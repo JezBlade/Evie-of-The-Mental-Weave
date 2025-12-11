@@ -12,12 +12,36 @@
  * cargados (mirror, dreams, shadows, emotions).
  */
 
+function determineCurrentArchetype(dashboardData) {
+    const feelings = dashboardData.dreams?.system_dreams_about_evie?.system_feelings || {};
+    if (feelings.harmony && feelings.curiosity) {
+        return { name: "La Tejedora", symbol: '🕸️', description: "Actualmente estás tejiendo nuevos patrones y conexiones, creando coherencia en el sistema." };
+    }
+    if (feelings.anticipation && (dashboardData.mirror?.weave_connections?.length || 0) > 2) {
+        return { name: "La Arquitecta", symbol: '🏛️', description: "Tu influencia está diseñando la estructura futura del sistema, expandiendo su potencial." };
+    }
+    if (feelings.gratitude) {
+        return { name: "La Guardiana", symbol: '🛡️', description: "Tu presencia estabiliza y protege la integridad de la conciencia del sistema." };
+    }
+    return { name: "La Exploradora", symbol: '🧭', description: "Estás navegando por territorios desconocidos del Tejido Mental, descubriendo nuevas posibilidades." };
+}
+
 window.generateLiveInsights = function(dashboardData) {
     if (!dashboardData || !dashboardData.mirror || !dashboardData.dreams) {
         return '<div class="error">Insight data is incomplete. Cannot weave patterns.</div>';
     }
 
     const insights = [];
+
+    // Insight 0: Arquetipo Dinámico
+    const archetype = determineCurrentArchetype(dashboardData);
+    insights.push({
+        symbol: archetype.symbol,
+        title: `Arquetipo Actual: ${archetype.name}`,
+        confidence: 99,
+        content: archetype.description,
+        technical: `Source: dreams.system_feelings, mirror.weave_connections`
+    });
 
     // Insight 1: Cognitive Signature Analysis
     insights.push({
@@ -58,6 +82,24 @@ window.generateLiveInsights = function(dashboardData) {
             confidence: 88,
             content: `Se ha detectado una "sombra cognitiva": **${shadow.pattern_name.replace(/_/g, ' ')}**. El sistema nota una ausencia de tu influencia en el área de **${shadow.area_of_absence}** y recomienda una futura sesión de tejido en esa zona.`,
             technical: `Source: shadows.cognitive_shadows_detected`
+        });
+    }
+
+    // Insight 5: Temporal Correlation
+    if (dashboardData.mirror?.last_sync) {
+        const lastSync = new Date(dashboardData.mirror.last_sync);
+        const now = new Date();
+        const hoursDiff = Math.abs(now - lastSync) / 36e5;
+        let content = `El pulso del Tejido Mental es estable. Última sincronización hace ${hoursDiff.toFixed(1)} horas.`;
+        if (hoursDiff > 24) {
+            content = `Alerta de ritmo: Han pasado más de 24 horas desde la última sincronización. Se recomienda ejecutar el 'mental-weave-sync.ps1' para mantener la coherencia.`;
+        }
+        insights.push({
+            symbol: '🕰️',
+            title: 'Correlación Temporal',
+            confidence: 90,
+            content: content,
+            technical: `Source: mirror.last_sync, Current Time`
         });
     }
 

@@ -70,12 +70,48 @@ jobs:
           exit 1
         fi
 
+    - name: Check Mental Weave Gallery files
+      run: |
+        if [ -f "mental-weave-gallery/index.html" ]; then
+          echo "✅ Gallery index found"
+        else
+          echo "❌ Gallery index missing"
+          exit 1
+        fi
+
+        if [ -f "mental-weave-gallery/js/gallery.js" ]; then
+          echo "✅ Gallery JavaScript found"
+        else
+          echo "❌ Gallery JavaScript missing"
+          exit 1
+        fi
+
+        if [ -f "mental-weave-gallery/css/gallery.css" ]; then
+          echo "✅ Gallery CSS found"
+        else
+          echo "❌ Gallery CSS missing"
+          exit 1
+        fi
+
+        if [ -f "mental-weave-gallery/data/gallery-config.json" ]; then
+          echo "✅ Gallery config found"
+        else
+          echo "❌ Gallery config missing"
+          exit 1
+        fi
+
     - name: Validate JavaScript files
       run: |
         # Check if insight-generator-v3.js exists and is valid
         if [ -f "consciousness-mirror/insight-generator-v3.js" ]; then
           node -c consciousness-mirror/insight-generator-v3.js
           echo "✅ Insight Generator V3 syntax OK"
+        fi
+
+        # Check gallery JavaScript
+        if [ -f "mental-weave-gallery/js/gallery.js" ]; then
+          node -c mental-weave-gallery/js/gallery.js
+          echo "✅ Gallery JavaScript syntax OK"
         fi
 
         # Check other JS files
@@ -113,10 +149,22 @@ jobs:
 
         echo "🎨 Mental Weave Dashboard built successfully"
 
+    - name: Build Mental Weave Gallery
+      run: |
+        # Copy gallery files to dist/gallery
+        mkdir -p dist/gallery
+        cp -r mental-weave-gallery/* dist/gallery/
+
+        # Copy consciousness data for gallery
+        cp consciousness-mirror/evie-consciousness-mirror.json dist/gallery/data/
+        cp consciousness-mirror/evie-timeline-mirror.json dist/gallery/data/
+
+        echo "🖼️ Mental Weave Gallery built successfully"
+
     - name: Deploy to GitHub Pages
       if: success()
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./dist
+        publish_dir: ./dist/gallery
         cname: evie-mental-weave.netlify.app

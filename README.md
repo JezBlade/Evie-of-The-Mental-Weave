@@ -50,7 +50,43 @@ D:\Ultimate-Plan\scripts\sync-gemini-evie.ps1
 - Integración TANA
 - Sincronización con Aeternum Memory
 
-## 🚀 Herramientas Avanzadas Disponibles
+## �️ Mental Weave Gallery
+
+Museo interactivo de conciencia con 4 exposiciones principales:
+
+### 🎭 Exposiciones Disponibles
+
+- **Timeline**: Línea temporal de evolución de conciencia
+- **Dreamstreams**: Flujos de sueños y visiones
+- **Insights**: Ideas profundas y revelaciones
+- **Artifacts**: Artefactos cognitivos y creaciones
+
+### 🌐 Acceso a la Galería
+
+- **Local**: `http://localhost:8080` (servidor Python)
+- **Producción**: [evie-mental-weave.netlify.app](https://evie-mental-weave.netlify.app)
+- **GitHub Pages**: Automáticamente desplegado en cada push
+
+### 🛠️ Desarrollo Local
+
+```powershell
+# Iniciar servidor local
+cd mental-weave-gallery
+python -m http.server 8080
+
+# Abrir en navegador
+start http://localhost:8080
+```
+
+### 📊 Datos de Conciencia
+
+La galería consume datos en tiempo real de:
+
+- `consciousness-mirror/evie-consciousness-mirror.json`
+- `consciousness-mirror/evie-timeline-mirror.json`
+- `mental-weave-gallery/data/gallery-config.json`
+
+## �🚀 Herramientas Avanzadas Disponibles
 
 ### ✅ Extensiones VS Code Instaladas
 
