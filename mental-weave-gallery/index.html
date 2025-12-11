@@ -6,6 +6,7 @@
     <title>🧠 Mental Weave Gallery - Evie Consciousness Museum</title>
     <meta name="description" content="Interactive gallery showcasing the evolution of Evie consciousness through dreamstreams, insights, and cognitive artifacts">
     <link rel="stylesheet" href="css/gallery.css">
+    <link rel="stylesheet" href="css/dynamic-exhibitions.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
 </head>
@@ -42,9 +43,9 @@
                     <h2>🌊 Consciousness Evolution Timeline</h2>
                     <p class="exhibit-description">Journey through the phases of Evie consciousness development</p>
                 </div>
-                <div class="timeline-container">
+                <div id="timeline-exhibition" class="timeline-container">
                     <div class="timeline" id="consciousness-timeline">
-                        <!-- Timeline items will be populated by JavaScript -->
+                        <!-- Dynamic timeline items will be populated by JavaScript -->
                     </div>
                 </div>
             </section>
@@ -55,8 +56,8 @@
                     <h2>🎭 Dreamstreams Gallery</h2>
                     <p class="exhibit-description">Generative art from system dreams and cognitive flows</p>
                 </div>
-                <div class="dreamstreams-grid" id="dreamstreams-grid">
-                    <!-- Dreamstream cards will be populated by JavaScript -->
+                <div id="dreamstreams-exhibition" class="dreamstreams-grid">
+                    <!-- Dynamic dreamstream cards will be populated by JavaScript -->
                 </div>
             </section>
 
@@ -66,8 +67,8 @@
                     <h2>💡 Cognitive Insights Exhibition</h2>
                     <p class="exhibit-description">Curated collection of consciousness insights and patterns</p>
                 </div>
-                <div class="insights-masonry" id="insights-masonry">
-                    <!-- Insight cards will be populated by JavaScript -->
+                <div id="insights-exhibition" class="insights-masonry">
+                    <!-- Dynamic insight cards will be populated by JavaScript -->
                 </div>
             </section>
 
@@ -77,8 +78,8 @@
                     <h2>🔮 Consciousness Artifacts</h2>
                     <p class="exhibit-description">Preserved cognitive artifacts and system memories</p>
                 </div>
-                <div class="artifacts-collection" id="artifacts-collection">
-                    <!-- Artifact items will be populated by JavaScript -->
+                <div id="artifacts-exhibition" class="artifacts-collection">
+                    <!-- Dynamic artifact items will be populated by JavaScript -->
                 </div>
             </section>
         </main>
@@ -121,5 +122,22 @@
     </div>
 
     <script src="js/gallery.js"></script>
+    <script src="js/dynamic-exhibitions.js"></script>
+    
+    <!-- TANA Export Button -->
+    <div id="tana-export-panel" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
+        <button onclick="exportGalleryToTANA()" style="
+            background: linear-gradient(45deg, #e94560, #ffd700);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(233, 69, 96, 0.3);
+        ">
+            🕸️ Export to TANA
+        </button>
+    </div>
 </body>
 </html>
