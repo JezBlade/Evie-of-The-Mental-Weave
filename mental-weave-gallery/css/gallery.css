@@ -289,6 +289,46 @@ body {
     line-height: 1.6;
 }
 
+.timeline-significance {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 0.5rem;
+}
+
+.timeline-significance.high {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+}
+
+.timeline-significance.medium {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: white;
+}
+
+.timeline-significance.low {
+    background: linear-gradient(135deg, #6b7280, #4b5563);
+    color: white;
+}
+
+/* Detail Items */
+.detail-item {
+    margin-bottom: 0.75rem;
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    border-left: 3px solid var(--accent-color);
+}
+
+.detail-item strong {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
 /* Dreamstreams Grid */
 .dreamstreams-grid {
     display: grid;
