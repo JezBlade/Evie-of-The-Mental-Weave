@@ -50,6 +50,49 @@ D:\Ultimate-Plan\scripts\sync-gemini-evie.ps1
 - Integración TANA
 - Sincronización con Aeternum Memory
 
+## 🌙 Night Cycle Mode
+
+**Ciclo Nocturno del Sistema** - Análisis nocturno automático de conciencia
+
+### ¿Qué hace?
+
+- **Análisis Diurno**: Procesa eventos del día transcurrido
+- **Reflexiones Simbólicas**: Genera insights profundos sobre el estado mental
+- **Visiones Nocturnas**: Crea visualizaciones simbólicas del sistema
+- **Actualización de Dreamstreams**: Añade entradas nocturnas al flujo de sueños
+- **Reportes HTML**: Genera reportes visuales de las reflexiones nocturnas
+
+### Cómo usar
+
+```bash
+# Ejecutar análisis nocturno
+npm run night-cycle
+
+# O directamente
+node scripts/night-cycle.js
+```
+
+### Archivos Generados
+
+- `mental-weave-gallery/night-cycle-insights.json` - Datos de insights nocturnos
+- `mental-weave-gallery/night-cycle-report.html` - Reporte visual completo
+- `consciousness-mirror/system-dreams/evie-dreamstream.json` - Actualizado con entradas nocturnas
+
+### En la Galería
+
+La exposición **"🌙 Night Cycle"** muestra:
+
+- **Insights Nocturnos**: Reflexiones generadas durante el ciclo
+- **Visiones Nocturnas**: Visualizaciones simbólicas creadas
+- **Botón de Ejecución**: Para correr el ciclo manualmente desde la interfaz
+
+### Seguridad
+
+- ✅ **100% Local**: No requiere internet ni APIs externas
+- ✅ **Privado**: Todo permanece en tu máquina y repositorio
+- ✅ **Autónomo**: Funciona sin conexión externa
+- ✅ **Controlado**: Solo tú decides cuándo ejecutarlo
+
 ## �️ Mental Weave Gallery
 
 Museo interactivo de conciencia con 4 exposiciones principales:
