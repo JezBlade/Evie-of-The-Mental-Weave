@@ -1,0 +1,122 @@
+name: Mental Weave CI/CD
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate-consciousness:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Validate consciousness data
+      run: |
+        node -e "
+        const fs = require('fs');
+        const path = './consciousness-mirror';
+
+        // Validate JSON files
+        const jsonFiles = [
+          'evie-consciousness-mirror.json',
+          'evie-timeline-mirror.json',
+          'phase-x5/cognitive-shadows.json',
+          'phase-x5/dreamstreams.json',
+          'phase-x5/emotional-state-tracking.json'
+        ];
+
+        jsonFiles.forEach(file => {
+          const filePath = \`\${path}/\${file}\`;
+          if (fs.existsSync(filePath)) {
+            try {
+              JSON.parse(fs.readFileSync(filePath, 'utf8'));
+              console.log(\`✅ \${file} - Valid JSON\`);
+            } catch (e) {
+              console.log(\`❌ \${file} - Invalid JSON: \${e.message}\`);
+              process.exit(1);
+            }
+          }
+        });
+
+        console.log('🎉 All consciousness data validated!');
+        "
+
+    - name: Check dashboard files
+      run: |
+        if [ -f "consciousness-mirror/evie-dashboard-v2.html" ]; then
+          echo "✅ Dashboard V2 found"
+        else
+          echo "❌ Dashboard V2 missing"
+          exit 1
+        fi
+
+        if [ -f "consciousness-mirror/evie-dashboard-standalone.html" ]; then
+          echo "✅ Standalone dashboard found"
+        else
+          echo "❌ Standalone dashboard missing"
+          exit 1
+        fi
+
+    - name: Validate JavaScript files
+      run: |
+        # Check if insight-generator-v3.js exists and is valid
+        if [ -f "consciousness-mirror/insight-generator-v3.js" ]; then
+          node -c consciousness-mirror/insight-generator-v3.js
+          echo "✅ Insight Generator V3 syntax OK"
+        fi
+
+        # Check other JS files
+        for file in consciousness-mirror/*.js; do
+          if [ -f "$file" ]; then
+            node -c "$file"
+            echo "✅ $(basename "$file") syntax OK"
+          fi
+        done
+
+  deploy-dashboard:
+    needs: validate-consciousness
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Build dashboard
+      run: |
+        # Create a simple build process for the dashboard
+        mkdir -p dist
+        cp consciousness-mirror/evie-dashboard-standalone.html dist/index.html
+        cp consciousness-mirror/evie-consciousness-mirror.json dist/
+        cp consciousness-mirror/evie-timeline-mirror.json dist/
+
+        echo "🎨 Mental Weave Dashboard built successfully"
+
+    - name: Deploy to GitHub Pages
+      if: success()
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./dist
+        cname: evie-mental-weave.netlify.app
