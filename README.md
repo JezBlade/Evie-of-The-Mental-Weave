@@ -70,7 +70,10 @@ Museo interactivo de conciencia con 4 exposiciones principales:
 ### 🛠️ Desarrollo Local
 
 ```powershell
-# Iniciar servidor local
+# Iniciar servidor local (método rápido)
+.\start-gallery.bat
+
+# O manualmente:
 cd mental-weave-gallery
 python -m http.server 8080
 
