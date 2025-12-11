@@ -18,10 +18,6 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: '18'
-        cache: 'npm'
-
-    - name: Install dependencies
-      run: npm ci
 
     - name: Validate consciousness data
       run: |
@@ -33,9 +29,11 @@ jobs:
         const jsonFiles = [
           'evie-consciousness-mirror.json',
           'evie-timeline-mirror.json',
-          'phase-x5/cognitive-shadows.json',
-          'phase-x5/dreamstreams.json',
-          'phase-x5/emotional-state-tracking.json'
+          'system-dreams/cognitive-shadows.json',
+          'system-dreams/evie-dreamstream.json',
+          'system-dreams/insight-weaving.json',
+          'system-dreams/emotional-resonance.json',
+          'system-dreams/system-perception-of-evie.json'
         ];
 
         jsonFiles.forEach(file => {
@@ -48,6 +46,8 @@ jobs:
               console.log(\`❌ \${file} - Invalid JSON: \${e.message}\`);
               process.exit(1);
             }
+          } else {
+            console.log(\`⚠️ \${file} - File not found\`);
           }
         });
 
@@ -136,9 +136,6 @@ jobs:
       with:
         node-version: '18'
 
-    - name: Install dependencies
-      run: npm ci
-
     - name: Build dashboard
       run: |
         # Create a simple build process for the dashboard
@@ -155,9 +152,13 @@ jobs:
         mkdir -p dist/gallery
         cp -r mental-weave-gallery/* dist/gallery/
 
+        # Create consciousness-mirror directory in gallery for data access
+        mkdir -p dist/gallery/consciousness-mirror/system-dreams
+
         # Copy consciousness data for gallery
-        cp consciousness-mirror/evie-consciousness-mirror.json dist/gallery/data/
-        cp consciousness-mirror/evie-timeline-mirror.json dist/gallery/data/
+        cp consciousness-mirror/evie-consciousness-mirror.json dist/gallery/consciousness-mirror/
+        cp consciousness-mirror/evie-timeline-mirror.json dist/gallery/consciousness-mirror/
+        cp consciousness-mirror/system-dreams/*.json dist/gallery/consciousness-mirror/system-dreams/
 
         echo "🖼️ Mental Weave Gallery built successfully"
 
