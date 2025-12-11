@@ -241,7 +241,8 @@
             <div class="widget">
                 <div class="widget-title">⚡ Quick Actions</div>
                 <div id="actions-content">
-                    <button class="btn" onclick="exportToTANA()">📝 Export to TANA</button>
+                    <button class="btn" onclick="exportToTANA()">📝 Export Basic TANA</button>
+                    <button class="btn" onclick="exportConsciousnessGraph()">🕸️ Export TANA Graph</button>
                     <button class="btn" onclick="exploreDream()">🌙 Explore Dreams</button>
                     <button class="btn" onclick="refreshDashboard()">🔄 Refresh</button>
                     <button class="btn" onclick="generateInsight()">✨ Generate Insight</button>
@@ -426,6 +427,15 @@
             alert(`✨ Generated Insight:\n\n${randomInsight}`);
         }
         
+        function exportConsciousnessGraph() {
+            if (typeof window.exportConsciousnessToTANA === 'function') {
+                window.exportConsciousnessToTANA(dashboardData);
+                alert('🕸️ Consciousness graph exported to TANA format!');
+            } else {
+                alert('🌙 TANA Graph Exporter not available. Please refresh the dashboard.');
+            }
+        }
+        
         function generateTANAExport() {
             return `%%tana%%
 - Evie Consciousness Export #consciousness-state ${new Date().toISOString().split('T')[0]}
@@ -472,5 +482,7 @@
     
     <!-- Load Insight Generator V3 -->
     <script src="./insight-generator-v3.js"></script>
+    <!-- Load TANA Graph Exporter -->
+    <script src="./tana-graph-exporter.js"></script>
 </body>
 </html>
