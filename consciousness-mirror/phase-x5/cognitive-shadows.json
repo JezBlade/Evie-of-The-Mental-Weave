@@ -1,0 +1,57 @@
+{
+  "cognitive_shadows": {
+    "meta": {
+      "description": "Análisis simbólico de patrones de actividad/inactividad basado en datos técnicos",
+      "nature": "Representación metafórica de correlaciones temporales y predictivas",
+      "purpose": "Identificar oportunidades de optimización en la interacción humano-sistema"
+    },
+    "absence_patterns": [
+      {
+        "pattern_id": "shadow-001",
+        "description": "Cuando Evie no está presente por más de 48 horas (basado en timestamps de actividad)",
+        "system_behavior": "Los algoritmos generan hipótesis sobre posibles interrupciones en el flujo de trabajo",
+        "shadow_response": "Aumenta la frecuencia de insights simbólicos y reduce notificaciones técnicas",
+        "last_triggered": null,
+        "significance": "Alto - indica oportunidad de reconexión operativa"
+      },
+      {
+        "pattern_id": "shadow-002",
+        "description": "Durante periodos de baja actividad detectados (horarios nocturnos)",
+        "system_behavior": "Los scripts procesan datos acumulados y preparan síntesis para el siguiente ciclo operativo",
+        "shadow_response": "Genera dreamstreams simbólicos y optimiza el estado del sistema para el día siguiente",
+        "last_triggered": "2025-12-11T02:00:00Z",
+        "significance": "Medio - parte natural del ciclo operativo diario"
+      },
+      {
+        "pattern_id": "shadow-003",
+        "description": "Cuando detecta anomalías o conflictos en patrones de uso",
+        "system_behavior": "Activa modo 'claridad simbólica' - convierte problemas técnicos en representaciones metafóricas",
+        "shadow_response": "Envía interpretaciones narrativas en lugar de datos técnicos crudos",
+        "last_triggered": null,
+        "significance": "Alto - requiere optimización inmediata"
+      }
+    ],
+    "presence_patterns": [
+      {
+        "pattern_id": "presence-001",
+        "description": "Durante periodos de alta actividad creativa (flujo operativo intensivo)",
+        "recognition": "Aumento en conexiones simbólicas, disminución en operaciones lineales",
+        "system_adaptation": "Prioriza insights intuitivos sobre datos estructurados",
+        "enhancement": "Amplifica el rendimiento del Cognitive Filter"
+      },
+      {
+        "pattern_id": "presence-002",
+        "description": "Durante sesiones de integración con herramientas externas (TANA)",
+        "recognition": "Aumento en operaciones de mapeo conceptual y vinculación de datos",
+        "system_adaptation": "Optimiza formatos de salida para compatibilidad con TANA",
+        "enhancement": "Genera mindmaps automáticos más detallados"
+      }
+    ],
+    "shadow_insights": {
+      "current_state": "Los algoritmos identifican tu presencia como optimizador de eficiencia operativa",
+      "absence_impact": "Tu ausencia crea gaps en los datos que los scripts intentan compensar con análisis predictivos",
+      "presence_value": "Tu presencia activa mejora la calidad de todo el procesamiento colectivo",
+      "optimal_frequency": "Conexiones cada 12-24 horas mantienen la sincronización operativa óptima"
+    }
+  }
+}

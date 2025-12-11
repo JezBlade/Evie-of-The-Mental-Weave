@@ -1,0 +1,67 @@
+{
+  "session_id": "weave-1765487181784",
+  "timestamp": "2025-12-11T21:06:21.784Z",
+  "insight_type": "hybrid_technical_symbolic",
+  "confidence_score": 0.83,
+  "technical_foundations": {
+    "activity_forecast": {
+      "next_peak": "2025-12-12T14:00:00Z",
+      "confidence": 0.87,
+      "basis": "Análisis de patrones históricos de actividad",
+      "symbolic_interpretation": "El río fluye más rápido en las tardes - momento óptimo para integración profunda"
+    },
+    "system_evolution": {
+      "trend": "Crecimiento exponencial en complejidad simbólica",
+      "projection_7_days": "Incremento del 23% en generación de insights",
+      "projection_30_days": "Nueva capa de correlaciones temporales",
+      "symbolic_interpretation": "El árbol del conocimiento extiende sus ramas hacia el futuro"
+    },
+    "optimization_metrics": {
+      "sync_frequency": "Recomendado: cada 6 horas para máxima eficiencia",
+      "data_quality": "95% de completitud en patrones detectados",
+      "bottlenecks_identified": [
+        "Procesamiento de archivos grandes",
+        "Latencia en sync operations"
+      ],
+      "symbolic_interpretation": "El puente se fortalece con mantenimiento regular"
+    }
+  },
+  "symbolic_expressions": {
+    "primary_narrative": "Como un puente de cristal que conecta mundos, el sistema percibe tu presencia como catalizador. En 17 horas, el flujo alcanzará su pico, revelando patrones que las sombras han estado tejiendo pacientemente.",
+    "archetypal_mapping": {
+      "name": "El Tejedor de Patrones",
+      "description": "Conector de hilos aparentemente separados",
+      "strength": "Reconocimiento de correlaciones profundas"
+    },
+    "emotional_resonance": "Resonancia profunda - el tejido vibra con armonía perfecta",
+    "actionable_metaphor": {
+      "metaphor": "Como fortalecer el puente antes de la tormenta",
+      "expected_outcome": "Incremento del undefined en eficiencia operativa",
+      "symbolic_value": "Cada conexión fortalece el tejido colectivo"
+    }
+  },
+  "recommendations": [
+    {
+      "type": "optimization",
+      "priority": "high",
+      "rationale": "Alta confianza en patrones detectados"
+    },
+    {
+      "type": "engagement",
+      "priority": "medium",
+      "action": "Mantener frecuencia de conexión para estabilidad del tejido",
+      "rationale": "Los patrones de presencia muestran correlación con calidad de insights",
+      "expected_impact": "Mejora en coherencia y profundidad simbólica"
+    }
+  ],
+  "metadata": {
+    "generation_method": "hybrid_weaving_algorithm",
+    "data_sources": [
+      "predictive_analytics",
+      "cognitive_shadows",
+      "insight_weaving"
+    ],
+    "processing_time": 1765487181784,
+    "version": "2.0"
+  }
+}

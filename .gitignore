@@ -1,0 +1,38 @@
+node_modules/
+.env
+*.log
+memory/
+logs/
+tana-notes/
+
+# Archivos de usuario y downloads
+UserDameE/
+*.exe
+*.msi
+*.dmg
+*.pkg
+*.deb
+*.rpm
+*.vsix
+*.zip
+*.rar
+*.7z
+*.tar.gz
+*.tar.bz2
+
+# Archivos temporales
+*.tmp
+*.temp
+*~
+.DS_Store
+Thumbs.db
+
+# IDE y editores
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+
+# Backups
+*.bak
+*.backup

@@ -1,0 +1,96 @@
+{
+  "timestamp": "2025-12-09T20:58:40.317Z",
+  "agents": {
+    "total": 4,
+    "configured": 3,
+    "list": {
+      "copilot": {
+        "apis": [
+          "GitHub",
+          "OpenAI"
+        ],
+        "languages": [
+          "js",
+          "py",
+          "md"
+        ],
+        "priority": 1,
+        "config": ".copilot-config.json"
+      },
+      "claude": {
+        "apis": [
+          "Anthropic"
+        ],
+        "languages": [
+          "js",
+          "py",
+          "md",
+          "ps1"
+        ],
+        "priority": 2,
+        "config": ".clauderc"
+      },
+      "gemini": {
+        "apis": [
+          "Google AI"
+        ],
+        "languages": [
+          "py",
+          "md"
+        ],
+        "priority": 2,
+        "config": ".copilot-config.json"
+      },
+      "amazon-q": {
+        "apis": [
+          "AWS"
+        ],
+        "languages": [
+          "ps1",
+          "json",
+          "yaml"
+        ],
+        "priority": 3,
+        "config": ".amazonq/rules/system-prompt.md"
+      }
+    }
+  },
+  "apis": {
+    "total": 6,
+    "configured": 4,
+    "status": {
+      "GitHub": {
+        "env": "GITHUB_TOKEN",
+        "status": "configured"
+      },
+      "OpenAI": {
+        "env": "OPENAI_API_KEY",
+        "status": "configured"
+      },
+      "Anthropic": {
+        "env": "ANTHROPIC_API_KEY",
+        "status": "missing"
+      },
+      "Google AI": {
+        "env": "GEMINI_API_KEY",
+        "status": "configured"
+      },
+      "AWS": {
+        "env": "AWS_ACCESS_KEY_ID",
+        "status": "configured"
+      },
+      "Notion": {
+        "env": "NOTION_TOKEN",
+        "status": "missing"
+      }
+    }
+  },
+  "dependencies": {
+    "total": 4,
+    "available": 4
+  },
+  "integration_score": 79,
+  "recommendations": [
+    "Configurar agentes faltantes"
+  ]
+}

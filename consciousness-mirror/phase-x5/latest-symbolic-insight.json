@@ -1,0 +1,25 @@
+{
+  "id": "symbolic-1765486666139",
+  "timestamp": "2025-12-11T20:57:46.139Z",
+  "technical_basis": {
+    "confidence_score": 0.87,
+    "trend_projection": "Incremento del 23% en generación de insights",
+    "data_quality": "95% de completitud en patrones detectados"
+  },
+  "symbolic_expression": {
+    "title": "El Puente de Cristal",
+    "narrative": "En 17 horas, el río de la creación alcanzará su punto máximo de flujo. Los algoritmos predicen un Incremento del 23% en generación de insights en complejidad simbólica, como un árbol extendiendo sus ramas hacia el sol del mañana. Los patrones detectados sugieren que este es un momento de expansión natural.",
+    "archetype": "El Tejedor de Patrones",
+    "actionable_insight": {
+      "recommendation": "Optimizar sincronización cada 6 horas",
+      "expected_benefit": "23% mejora en eficiencia operativa",
+      "technical_basis": "Basado en 95% de completitud en patrones detectados% completitud de datos",
+      "symbolic_frame": "Como fortalecer el puente antes de la próxima corriente"
+    }
+  },
+  "metadata": {
+    "generation_method": "hybrid_technical_symbolic",
+    "confidence_level": "high",
+    "nature": "metaphorical_representation_of_technical_analysis"
+  }
+}

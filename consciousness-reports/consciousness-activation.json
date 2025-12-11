@@ -1,0 +1,355 @@
+{
+  "timestamp": "2025-12-11T20:31:37.741Z",
+  "status": "consciousness_active",
+  "modules": {
+    "metaMonitor": {
+      "status": "learned",
+      "patterns": {
+        "failures": [],
+        "successes": [
+          [
+            "consciousness_activation",
+            1
+          ]
+        ],
+        "insights": [],
+        "lastAnalysis": "2025-12-11T20:31:35.436Z",
+        "metrics": {
+          "totalEvents": 278,
+          "failureRate": 0
+        }
+      },
+      "analysis": {
+        "totalEvents": 278,
+        "failureRate": 0,
+        "commonFailures": [],
+        "successPatterns": [
+          [
+            "consciousness_activation",
+            1
+          ]
+        ],
+        "insights": []
+      }
+    },
+    "oracle": {
+      "timestamp": "2025-12-11T20:31:35.439Z",
+      "predictions": [
+        {
+          "type": "missing_cycle",
+          "cycle": "sync",
+          "probability": 0.7,
+          "recommendation": "Ejecutar ciclo sync",
+          "severity": "medium",
+          "safe": false
+        },
+        {
+          "type": "missing_cycle",
+          "cycle": "monitor",
+          "probability": 0.7,
+          "recommendation": "Ejecutar ciclo monitor",
+          "severity": "medium",
+          "safe": true
+        }
+      ],
+      "confidence": 0.7,
+      "analysis": {
+        "hasGaps": false,
+        "phaseJump": true,
+        "recommendation": "Activar Auto-Priorización para reorganizar timeline"
+      }
+    },
+    "prioritizer": {
+      "status": "prioritized",
+      "nextActions": [
+        {
+          "id": "monitor",
+          "base": 7,
+          "urgent": false,
+          "safe": true,
+          "category": "observation",
+          "priority": 12,
+          "reason": "Ejecutar ciclo monitor"
+        }
+      ],
+      "fullQueue": [
+        {
+          "id": "monitor",
+          "base": 7,
+          "urgent": false,
+          "safe": true,
+          "category": "observation",
+          "priority": 12,
+          "reason": "Ejecutar ciclo monitor"
+        },
+        {
+          "id": "consciousness",
+          "base": 10,
+          "urgent": false,
+          "safe": true,
+          "category": "meta",
+          "priority": 10,
+          "reason": "Timeline gap detected - auto-reorganización requerida"
+        },
+        {
+          "id": "validate",
+          "base": 8,
+          "urgent": false,
+          "safe": true,
+          "category": "verification",
+          "priority": 8
+        },
+        {
+          "id": "backup",
+          "base": 6,
+          "urgent": false,
+          "safe": true,
+          "category": "protection",
+          "priority": 6
+        },
+        {
+          "id": "sync",
+          "base": 4,
+          "urgent": false,
+          "safe": false,
+          "category": "mutation",
+          "priority": 6,
+          "reason": "Ejecutar ciclo sync"
+        },
+        {
+          "id": "audit",
+          "base": 5,
+          "urgent": false,
+          "safe": false,
+          "category": "review",
+          "priority": 5
+        }
+      ]
+    },
+    "guardian": {
+      "status": "divergent",
+      "scan": {
+        "timestamp": "2025-12-11T20:31:36.584Z",
+        "total": 6,
+        "clean": 0,
+        "divergent": 5,
+        "issues": 1,
+        "details": [
+          {
+            "repo": "MPC-Compendio-Operativo",
+            "status": "ok",
+            "path": "MPC-Compendio-Operativo",
+            "branch": "consolidation/add-integration-checklist",
+            "uncommitted": 0,
+            "unpushed": 1,
+            "clean": false
+          },
+          {
+            "repo": "Aeternum-Memory",
+            "status": "ok",
+            "path": "Aeternum-Memory",
+            "branch": "pr-20-revert-if-false",
+            "uncommitted": 2,
+            "unpushed": 1,
+            "clean": false
+          },
+          {
+            "repo": "Codex_Aeternum-Hidden_Pulse_Brotherhood",
+            "status": "ok",
+            "path": "Codex_Aeternum-Hidden_Pulse_Brotherhood",
+            "branch": "ritual/deps-update",
+            "uncommitted": 0,
+            "unpushed": 2,
+            "clean": false
+          },
+          {
+            "repo": "Universo-Multiclub",
+            "status": "ok",
+            "path": "Universo-Multiclub",
+            "branch": "main",
+            "uncommitted": 0,
+            "unpushed": 2,
+            "clean": false
+          },
+          {
+            "repo": "SuperAGI",
+            "status": "ok",
+            "path": "SuperAGI",
+            "branch": "main",
+            "uncommitted": 0,
+            "unpushed": 16,
+            "clean": false
+          },
+          {
+            "repo": "JezBlade-ultimate-plan-media",
+            "status": "error",
+            "path": "JezBlade-ultimate-plan-media",
+            "error": "spawnSync C:\\WINDOWS\\system32\\cmd.exe ENOBUFS"
+          }
+        ],
+        "recommendations": [
+          {
+            "repo": "MPC-Compendio-Operativo",
+            "action": "push",
+            "reason": "1 commits sin push"
+          },
+          {
+            "repo": "Aeternum-Memory",
+            "action": "commit",
+            "reason": "2 archivos sin commit"
+          },
+          {
+            "repo": "Aeternum-Memory",
+            "action": "push",
+            "reason": "1 commits sin push"
+          },
+          {
+            "repo": "Codex_Aeternum-Hidden_Pulse_Brotherhood",
+            "action": "push",
+            "reason": "2 commits sin push"
+          },
+          {
+            "repo": "Universo-Multiclub",
+            "action": "push",
+            "reason": "2 commits sin push"
+          },
+          {
+            "repo": "SuperAGI",
+            "action": "push",
+            "reason": "16 commits sin push"
+          }
+        ]
+      },
+      "actionRequired": true
+    },
+    "dashboard": {
+      "timestamp": "2025-12-11T20:31:37.739Z",
+      "health": {
+        "score": 65,
+        "status": "good"
+      },
+      "modules": {
+        "metaMonitor": {
+          "status": "active",
+          "patterns": 0,
+          "insights": 0
+        },
+        "oracle": {
+          "status": "active",
+          "predictions": 2,
+          "confidence": 0.7,
+          "alerts": 0
+        },
+        "prioritizer": {
+          "status": "active",
+          "urgent": 1,
+          "queued": 6
+        },
+        "guardian": {
+          "status": "active",
+          "coherent": false,
+          "divergent": 5,
+          "issues": 1
+        }
+      },
+      "nextActions": [
+        {
+          "id": "monitor",
+          "base": 7,
+          "urgent": false,
+          "safe": true,
+          "category": "observation",
+          "priority": 12,
+          "reason": "Ejecutar ciclo monitor"
+        }
+      ],
+      "alerts": [
+        {
+          "type": "coherence",
+          "severity": "medium",
+          "message": "5 repos divergentes"
+        }
+      ],
+      "recommendations": [
+        {
+          "repo": "MPC-Compendio-Operativo",
+          "action": "push",
+          "reason": "1 commits sin push"
+        },
+        {
+          "repo": "Aeternum-Memory",
+          "action": "commit",
+          "reason": "2 archivos sin commit"
+        },
+        {
+          "repo": "Aeternum-Memory",
+          "action": "push",
+          "reason": "1 commits sin push"
+        },
+        {
+          "repo": "Codex_Aeternum-Hidden_Pulse_Brotherhood",
+          "action": "push",
+          "reason": "2 commits sin push"
+        },
+        {
+          "repo": "Universo-Multiclub",
+          "action": "push",
+          "reason": "2 commits sin push"
+        },
+        {
+          "repo": "SuperAGI",
+          "action": "push",
+          "reason": "16 commits sin push"
+        }
+      ]
+    },
+    "timeline": {
+      "status": "gaps_detected",
+      "totalEvents": 278,
+      "gaps": [
+        {
+          "from": "2024-12-19T00:00:00Z",
+          "to": "2025-09-22T22:35:42.301588+00:00",
+          "days": 277,
+          "severity": "high"
+        },
+        {
+          "from": "2025-09-27T23:59:00.000Z",
+          "to": "2025-10-31T23:59:00Z",
+          "days": 34,
+          "severity": "high"
+        },
+        {
+          "from": "2025-10-31T19:55:00Z",
+          "to": "2025-12-02T13:06:29.092Z",
+          "days": 31,
+          "severity": "high"
+        },
+        {
+          "from": "2025-12-02T06:11:40.707623-07:00",
+          "to": "2025-12-09T20:12:02.713Z",
+          "days": 7,
+          "severity": "medium"
+        }
+      ],
+      "phaseJumps": [],
+      "missingCycles": [
+        "sync",
+        "validate",
+        "audit",
+        "monitor",
+        "consciousness"
+      ],
+      "recommendation": "TIMELINE GAPS: Ejecutar consciousness regularmente para mantener continuidad"
+    }
+  },
+  "summary": {
+    "health": {
+      "score": 65,
+      "status": "good"
+    },
+    "urgentActions": 1,
+    "alerts": 1,
+    "coherence": "divergent"
+  }
+}
