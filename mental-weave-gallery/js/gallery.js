@@ -151,6 +151,9 @@ class MentalWeaveGallery {
             case 'artifacts':
                 this.renderArtifacts();
                 break;
+            case 'night-cycle':
+                this.renderNightCycle();
+                break;
         }
     }
 
@@ -523,6 +526,96 @@ class MentalWeaveGallery {
                 <button onclick="location.reload()" style="margin-top: 1rem; padding: 0.5rem 1rem; background: var(--accent-color); border: none; border-radius: 6px; color: white; cursor: pointer;">Retry</button>
             </div>
         `;
+    }
+
+    async renderNightCycle() {
+        const container = document.getElementById('night-cycle-exhibition');
+        const statusIndicator = document.getElementById('cycle-status');
+
+        try {
+            // Load night cycle data
+            const response = await fetch('./night-cycle-insights.json');
+            const nightData = response.ok ? await response.json() : { insights: [], visions: [] };
+
+            // Update status
+            const hasData = nightData.insights && nightData.insights.length > 0;
+            statusIndicator.textContent = hasData ?
+                `Last cycle: ${new Date(nightData.timestamp).toLocaleString()}` :
+                'No night cycle data available';
+            statusIndicator.classList.toggle('active', hasData);
+
+            // Render insights
+            const insightsGrid = document.getElementById('night-insights');
+            if (nightData.insights && nightData.insights.length > 0) {
+                insightsGrid.innerHTML = nightData.insights.map(insight => `
+                    <div class="night-insight-card">
+                        <div class="night-insight-type">${insight.type.replace(/_/g, ' ')}</div>
+                        <div class="night-insight-title">${insight.title}</div>
+                        <div class="night-insight-content">${insight.content}</div>
+                        <div class="night-insight-symbolism">${insight.symbolism}</div>
+                    </div>
+                `).join('');
+            } else {
+                insightsGrid.innerHTML = '<div class="night-insight-card"><div class="night-insight-title">No nocturnal insights yet</div><div class="night-insight-content">Run the night cycle to generate insights.</div></div>';
+            }
+
+            // Render visions
+            const visionsDisplay = document.getElementById('night-visions');
+            if (nightData.visions && nightData.visions.length > 0) {
+                visionsDisplay.innerHTML = nightData.visions.map(vision => `
+                    <div class="night-vision-card">
+                        <div class="night-vision-title">${vision.name}</div>
+                        <div class="night-vision-description">${vision.description}</div>
+                        <div class="night-vision-symbolism">${vision.symbolism}</div>
+                        <div class="night-vision-meta">
+                            <span>Intensity: ${(vision.intensity * 100).toFixed(0)}%</span>
+                            <span>Duration: ${vision.duration}s</span>
+                        </div>
+                    </div>
+                `).join('');
+            } else {
+                visionsDisplay.innerHTML = '<div class="night-vision-card"><div class="night-vision-title">No night visions yet</div><div class="night-vision-description">Run the night cycle to generate visions.</div></div>';
+            }
+
+        } catch (error) {
+            console.error('Error loading night cycle data:', error);
+            statusIndicator.textContent = 'Error loading night cycle data';
+            container.innerHTML = '<div class="error-message">Failed to load night cycle data</div>';
+        }
+    }
+
+    async runNightCycle() {
+        const button = document.querySelector('.run-cycle-btn');
+        const statusIndicator = document.getElementById('cycle-status');
+
+        // Disable button and show loading
+        button.disabled = true;
+        button.textContent = '🌙 Running Night Cycle...';
+        statusIndicator.textContent = 'Processing nocturnal reflections...';
+
+        try {
+            // This would normally call the Node.js script
+            // For now, we'll simulate the process
+            await new Promise(resolve => setTimeout(resolve, 3000)); // Simulate processing time
+
+            // Reload the night cycle data
+            await this.renderNightCycle();
+
+            statusIndicator.textContent = 'Night cycle completed - data refreshed';
+            button.textContent = '✅ Night Cycle Complete';
+
+            // Re-enable button after 5 seconds
+            setTimeout(() => {
+                button.disabled = false;
+                button.textContent = '🌙 Run Night Cycle';
+            }, 5000);
+
+        } catch (error) {
+            console.error('Error running night cycle:', error);
+            statusIndicator.textContent = 'Error during night cycle';
+            button.disabled = false;
+            button.textContent = '❌ Error - Try Again';
+        }
     }
 }
 

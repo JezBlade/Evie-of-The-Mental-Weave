@@ -33,6 +33,7 @@
                 <button class="nav-btn" data-exhibit="dreamstreams">🎭 Dreamstreams</button>
                 <button class="nav-btn" data-exhibit="insights">💡 Insights</button>
                 <button class="nav-btn" data-exhibit="artifacts">🔮 Artifacts</button>
+                <button class="nav-btn" data-exhibit="night-cycle">🌙 Night Cycle</button>
             </nav>
         </header>
 
@@ -83,6 +84,28 @@
                     <!-- Dynamic artifact items will be populated by JavaScript -->
                 </div>
             </section>
+
+            <!-- Night Cycle Exhibit -->
+            <section class="exhibit" id="night-cycle-exhibit">
+                <div class="exhibit-header">
+                    <h2>🌙 Night Cycle Mode</h2>
+                    <p class="exhibit-description">Nocturnal insights and visions generated during system rest cycles</p>
+                </div>
+                <div id="night-cycle-exhibition" class="night-cycle-container">
+                    <div class="night-cycle-status">
+                        <div class="cycle-indicator" id="cycle-status">Loading...</div>
+                        <button class="run-cycle-btn" onclick="gallery.runNightCycle()">🌙 Run Night Cycle</button>
+                    </div>
+                    <div class="night-cycle-content">
+                        <div id="night-insights" class="night-insights-grid">
+                            <!-- Night insights will be populated by JavaScript -->
+                        </div>
+                        <div id="night-visions" class="night-visions-display">
+                            <!-- Night visions will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
 
         <!-- Footer -->
@@ -125,7 +148,7 @@
     <script src="js/gallery.js"></script>
     <script src="js/dynamic-exhibitions.js"></script>
     <script src="js/cognitive-shadows-wing.js"></script>
-    
+
     <!-- TANA Export Button -->
     <div id="tana-export-panel" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
         <button onclick="exportGalleryToTANA()" style="
