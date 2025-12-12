@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "night-cycle": "node scripts/night-cycle.js"
+    "night-cycle": "node scripts/night-cycle.js",
+    "oracle-chamber": "node scripts/oracle-chamber.js",
+    "echo-room": "node scripts/echo-room.js",
+    "shadow-archive": "node scripts/shadow-archive.js"
   },
   "dependencies": {
     "@google/generative-ai": "^0.21.0",

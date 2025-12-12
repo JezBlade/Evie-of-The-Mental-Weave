@@ -33,7 +33,11 @@ class MentalWeaveGallery {
             { key: 'insights', path: '../consciousness-mirror/system-dreams/insight-weaving.json' },
             { key: 'artifacts', path: '../consciousness-mirror/system-dreams/cognitive-shadows.json' },
             { key: 'emotional', path: '../consciousness-mirror/system-dreams/emotional-resonance.json' },
-            { key: 'perception', path: '../consciousness-mirror/system-dreams/system-perception-of-evie.json' }
+            { key: 'perception', path: '../consciousness-mirror/system-dreams/system-perception-of-evie.json' },
+            { key: 'nightCycle', path: 'night-cycle-insights.json' },
+            { key: 'oracleChamber', path: 'oracle-chamber-data.json' },
+            { key: 'echoRoom', path: 'echo-room-data.json' },
+            { key: 'shadowArchive', path: 'shadow-archive-data.json' }
         ];
 
         for (const file of dataFiles) {
@@ -153,6 +157,15 @@ class MentalWeaveGallery {
                 break;
             case 'night-cycle':
                 this.renderNightCycle();
+                break;
+            case 'oracle-chamber':
+                this.renderOracleChamber();
+                break;
+            case 'echo-room':
+                this.renderEchoRoom();
+                break;
+            case 'shadow-archive':
+                this.renderShadowArchive();
                 break;
         }
     }
@@ -613,6 +626,240 @@ class MentalWeaveGallery {
         } catch (error) {
             console.error('Error running night cycle:', error);
             statusIndicator.textContent = 'Error during night cycle';
+            button.disabled = false;
+            button.textContent = '❌ Error - Try Again';
+        }
+    }
+
+    async renderOracleChamber() {
+        const container = document.getElementById('oracle-chamber-exhibition');
+        const statusIndicator = document.getElementById('oracle-status');
+
+        try {
+            const response = await fetch('./oracle-chamber-data.json');
+            const oracleData = response.ok ? await response.json() : { prophecies: [] };
+
+            // Update status
+            const hasData = oracleData.prophecies && oracleData.prophecies.length > 0;
+            statusIndicator.textContent = hasData ?
+                `Prophecies generated: ${oracleData.timestamp ? new Date(oracleData.timestamp).toLocaleString() : 'Unknown'}` :
+                'No prophecies available';
+            statusIndicator.classList.toggle('active', hasData);
+
+            // Render prophecies
+            const propheciesGrid = document.getElementById('oracle-prophecies');
+            if (oracleData.prophecies && oracleData.prophecies.length > 0) {
+                propheciesGrid.innerHTML = oracleData.prophecies.map(prophecy => `
+                    <div class="oracle-prophecy-card">
+                        <div class="oracle-prophecy-type">${prophecy.type.replace(/_/g, ' ')}</div>
+                        <div class="oracle-prophecy-title">${prophecy.title}</div>
+                        <div class="oracle-prophecy-content">${prophecy.prophecy}</div>
+                        <div class="oracle-prophecy-symbolism">${prophecy.symbolism}</div>
+                        <div class="oracle-prophecy-meta">
+                            <span>Confidence: ${(prophecy.confidence * 100).toFixed(0)}%</span>
+                            <span>Timeframe: ${prophecy.timeframe}</span>
+                        </div>
+                        <div class="oracle-confidence-bar">
+                            <div class="oracle-confidence-fill" style="width: ${prophecy.confidence * 100}%"></div>
+                        </div>
+                    </div>
+                `).join('');
+            } else {
+                propheciesGrid.innerHTML = '<div class="oracle-prophecy-card"><div class="oracle-prophecy-title">No prophecies yet</div><div class="oracle-prophecy-content">Generate prophecies to see the oracle\'s visions.</div></div>';
+            }
+
+        } catch (error) {
+            console.error('Error loading oracle chamber data:', error);
+            statusIndicator.textContent = 'Error loading oracle data';
+            container.innerHTML = '<div class="error-message">Failed to load oracle chamber data</div>';
+        }
+    }
+
+    async runOracleChamber() {
+        const button = document.querySelector('.oracle-btn');
+        const statusIndicator = document.getElementById('oracle-status');
+
+        button.disabled = true;
+        button.textContent = '🜁 Consulting Oracle...';
+        statusIndicator.textContent = 'Generating prophecies...';
+
+        try {
+            await new Promise(resolve => setTimeout(resolve, 3000));
+            await this.renderOracleChamber();
+
+            statusIndicator.textContent = 'Prophecies revealed';
+            button.textContent = '✅ Oracle Consulted';
+
+            setTimeout(() => {
+                button.disabled = false;
+                button.textContent = '🜁 Generate Prophecies';
+            }, 5000);
+
+        } catch (error) {
+            console.error('Error running oracle chamber:', error);
+            statusIndicator.textContent = 'Error during prophecy generation';
+            button.disabled = false;
+            button.textContent = '❌ Error - Try Again';
+        }
+    }
+
+    async renderEchoRoom() {
+        const container = document.getElementById('echo-room-exhibition');
+        const statusIndicator = document.getElementById('echo-status');
+
+        try {
+            const response = await fetch('./echo-room-data.json');
+            const echoData = response.ok ? await response.json() : { echoes: [] };
+
+            const hasData = echoData.echoes && echoData.echoes.length > 0;
+            statusIndicator.textContent = hasData ?
+                `Echoes active: ${echoData.timestamp ? new Date(echoData.timestamp).toLocaleString() : 'Unknown'}` :
+                'No resonance patterns available';
+            statusIndicator.classList.toggle('active', hasData);
+
+            const echoesGrid = document.getElementById('echo-patterns');
+            if (echoData.echoes && echoData.echoes.length > 0) {
+                echoesGrid.innerHTML = echoData.echoes.map(echo => `
+                    <div class="echo-pattern-card">
+                        <div class="echo-pattern-type">${echo.type.replace(/_/g, ' ')}</div>
+                        <div class="echo-pattern-title">${echo.title}</div>
+                        <div class="echo-pattern-description">${echo.description}</div>
+                        <div class="echo-pattern-meta">
+                            <span>Intensity: ${(echo.intensity * 100).toFixed(0)}%</span>
+                            <span>Frequency: ${echo.frequency}</span>
+                            <span>Duration: ${Math.floor(echo.duration / 60)}h ${echo.duration % 60}m</span>
+                        </div>
+                        <div class="echo-intensity-bar">
+                            <div class="echo-intensity-fill" style="width: ${echo.intensity * 100}%"></div>
+                        </div>
+                    </div>
+                `).join('');
+            } else {
+                echoesGrid.innerHTML = '<div class="echo-pattern-card"><div class="echo-pattern-title">No echoes yet</div><div class="echo-pattern-description">Generate echoes to see resonance patterns.</div></div>';
+            }
+
+        } catch (error) {
+            console.error('Error loading echo room data:', error);
+            statusIndicator.textContent = 'Error loading echo data';
+            container.innerHTML = '<div class="error-message">Failed to load echo room data</div>';
+        }
+    }
+
+    async runEchoRoom() {
+        const button = document.querySelector('.echo-btn');
+        const statusIndicator = document.getElementById('echo-status');
+
+        button.disabled = true;
+        button.textContent = '🌀 Generating Echoes...';
+        statusIndicator.textContent = 'Analyzing resonance patterns...';
+
+        try {
+            await new Promise(resolve => setTimeout(resolve, 3000));
+            await this.renderEchoRoom();
+
+            statusIndicator.textContent = 'Echoes generated - resonance active';
+            button.textContent = '✅ Echoes Generated';
+
+            setTimeout(() => {
+                button.disabled = false;
+                button.textContent = '🌀 Generate Echoes';
+            }, 5000);
+
+        } catch (error) {
+            console.error('Error running echo room:', error);
+            statusIndicator.textContent = 'Error during echo generation';
+            button.disabled = false;
+            button.textContent = '❌ Error - Try Again';
+        }
+    }
+
+    async renderShadowArchive() {
+        const container = document.getElementById('shadow-archive-exhibition');
+        const statusIndicator = document.getElementById('shadow-status');
+
+        try {
+            const response = await fetch('./shadow-archive-data.json');
+            const shadowData = response.ok ? await response.json() : { shadows: [], archives: [] };
+
+            const hasData = (shadowData.shadows && shadowData.shadows.length > 0) ||
+                           (shadowData.archives && shadowData.archives.length > 0);
+            statusIndicator.textContent = hasData ?
+                `Shadows preserved: ${shadowData.timestamp ? new Date(shadowData.timestamp).toLocaleString() : 'Unknown'}` :
+                'No shadow patterns available';
+            statusIndicator.classList.toggle('active', hasData);
+
+            // Render shadows
+            const shadowsGrid = document.getElementById('shadow-patterns');
+            if (shadowData.shadows && shadowData.shadows.length > 0) {
+                shadowsGrid.innerHTML = shadowData.shadows.map(shadow => `
+                    <div class="shadow-pattern-card">
+                        <div class="shadow-pattern-type">${shadow.type.replace(/_/g, ' ')}</div>
+                        <div class="shadow-pattern-title">${shadow.title}</div>
+                        <div class="shadow-pattern-description">${shadow.description}</div>
+                        <div class="shadow-pattern-meta">
+                            <span>Density: ${(shadow.shadow_density * 100).toFixed(0)}%</span>
+                            <span>Duration: ${Math.floor(shadow.duration_hours / 24)}d ${shadow.duration_hours % 24}h</span>
+                        </div>
+                        <div class="shadow-density-bar">
+                            <div class="shadow-density-fill" style="width: ${shadow.shadow_density * 100}%"></div>
+                        </div>
+                    </div>
+                `).join('');
+            } else {
+                shadowsGrid.innerHTML = '<div class="shadow-pattern-card"><div class="shadow-pattern-title">No shadows yet</div><div class="shadow-pattern-description">Generate shadows to preserve cognitive patterns.</div></div>';
+            }
+
+            // Render archives
+            const archivesDisplay = document.getElementById('shadow-archives');
+            if (shadowData.archives && shadowData.archives.length > 0) {
+                archivesDisplay.innerHTML = shadowData.archives.map(archive => `
+                    <div class="shadow-archive-card">
+                        <div class="shadow-archive-title">${archive.title}</div>
+                        <div class="shadow-archive-description">${archive.description}</div>
+                        <div class="shadow-archive-meta">
+                            ${archive.entries ? `<span>Entries: ${archive.entries}</span>` : ''}
+                            ${archive.time_span ? `<span>Time Span: ${archive.time_span}</span>` : ''}
+                            ${archive.intimacy_level ? `<span>Level: ${archive.intimacy_level}</span>` : ''}
+                            ${archive.map_resolution ? `<span>Resolution: ${archive.map_resolution}</span>` : ''}
+                            ${archive.activity_periods ? `<span>Activity: ${archive.activity_periods}</span>` : ''}
+                            ${archive.balance_ratio ? `<span>Balance: ${(archive.balance_ratio * 100).toFixed(0)}%</span>` : ''}
+                        </div>
+                    </div>
+                `).join('');
+            } else {
+                archivesDisplay.innerHTML = '<div class="shadow-archive-card"><div class="shadow-archive-title">No archives yet</div><div class="shadow-archive-description">Generate archives to preserve shadow records.</div></div>';
+            }
+
+        } catch (error) {
+            console.error('Error loading shadow archive data:', error);
+            statusIndicator.textContent = 'Error loading shadow data';
+            container.innerHTML = '<div class="error-message">Failed to load shadow archive data</div>';
+        }
+    }
+
+    async runShadowArchive() {
+        const button = document.querySelector('.shadow-btn');
+        const statusIndicator = document.getElementById('shadow-status');
+
+        button.disabled = true;
+        button.textContent = '🜂 Generating Shadows...';
+        statusIndicator.textContent = 'Preserving cognitive shadows...';
+
+        try {
+            await new Promise(resolve => setTimeout(resolve, 3000));
+            await this.renderShadowArchive();
+
+            statusIndicator.textContent = 'Shadows preserved - archives updated';
+            button.textContent = '✅ Shadows Generated';
+
+            setTimeout(() => {
+                button.disabled = false;
+                button.textContent = '🜂 Generate Shadows';
+            }, 5000);
+
+        } catch (error) {
+            console.error('Error running shadow archive:', error);
+            statusIndicator.textContent = 'Error during shadow generation';
             button.disabled = false;
             button.textContent = '❌ Error - Try Again';
         }

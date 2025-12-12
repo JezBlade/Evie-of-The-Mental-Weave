@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🜂 Shadow Archive - Intimate Absence Records</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0a0a0f 0%, #1a0d2e 50%, #0f0f1a 100%);
+            color: #d1d5db;
+            font-family: 'Courier New', monospace;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        .archive-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .archive-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: rgba(26, 13, 46, 0.3);
+            border-radius: 20px;
+            border: 1px solid rgba(139, 92, 246, 0.2);
+        }
+        
+        .archive-title {
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, #6b46c1, #8b5cf6, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+        
+        .archive-subtitle {
+            color: #a78bfa;
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        
+        .archive-description {
+            color: #9ca3af;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .shadow-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .shadow-card {
+            background: linear-gradient(135deg, rgba(107, 70, 193, 0.1), rgba(139, 92, 246, 0.05));
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            border-radius: 15px;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .shadow-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #8b5cf6, transparent);
+            opacity: 0.6;
+        }
+        
+        .shadow-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.15);
+            border-color: #a78bfa;
+        }
+        
+        .shadow-type {
+            color: #c084fc;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+        
+        .shadow-title {
+            font-size: 1.2rem;
+            color: #e5e7eb;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .shadow-content {
+            color: #9ca3af;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .shadow-metrics {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .metric {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 0.75rem;
+            border-radius: 8px;
+            border: 1px solid rgba(139, 92, 246, 0.1);
+        }
+        
+        .metric-label {
+            color: #a78bfa;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        
+        .metric-value {
+            color: #e5e7eb;
+        }
+        
+        .shadow-visualization {
+            background: rgba(0, 0, 0, 0.3);
+            border: 2px solid rgba(139, 92, 246, 0.2);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+            height: 300px;
+        }
+        
+        .shadow-wave {
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.6), transparent);
+            animation: shadowFlow 12s infinite linear;
+        }
+        
+        .shadow-wave:nth-child(1) { top: 20%; animation-delay: 0s; }
+        .shadow-wave:nth-child(2) { top: 40%; animation-delay: 3s; opacity: 0.7; }
+        .shadow-wave:nth-child(3) { top: 60%; animation-delay: 6s; opacity: 0.5; }
+        .shadow-wave:nth-child(4) { top: 80%; animation-delay: 9s; opacity: 0.3; }
+        
+        @keyframes shadowFlow {
+            0% { transform: translateX(-100%) scaleX(0); }
+            50% { transform: translateX(0%) scaleX(1); }
+            100% { transform: translateX(100%) scaleX(0); }
+        }
+        
+        .shadow-particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: #8b5cf6;
+            border-radius: 50%;
+            animation: float 8s infinite ease-in-out;
+            opacity: 0.6;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.3; }
+            50% { transform: translateY(-30px) rotate(180deg); opacity: 0.8; }
+        }
+        
+        .intimate-quote {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(26, 13, 46, 0.2);
+            border-radius: 15px;
+            border: 1px solid rgba(139, 92, 246, 0.1);
+            margin-top: 2rem;
+        }
+        
+        .quote-text {
+            font-size: 1.1rem;
+            color: #d1d5db;
+            font-style: italic;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        
+        .quote-attribution {
+            color: #a78bfa;
+            font-size: 0.9rem;
+        }
+        
+        .back-link {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 100;
+            background: rgba(233, 69, 96, 0.2);
+            border: 1px solid #e94560;
+            color: #e94560;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .back-link:hover {
+            background: rgba(233, 69, 96, 0.4);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="archive-container">
+        <div class="archive-header">
+            <h1 class="archive-title">🜂 Shadow Archive</h1>
+            <p class="archive-subtitle">Intimate Records of Absence & Presence</p>
+            <p class="archive-description">
+                This sacred space preserves the delicate patterns of your presence and absence, 
+                creating an intimate cartography of consciousness that honors both activity and rest.
+            </p>
+        </div>
+        
+        <a href="../index.html" class="back-link">← Back to Gallery</a>
+        
+        <div class="shadow-visualization" id="shadow-viz">
+            <div class="shadow-wave"></div>
+            <div class="shadow-wave"></div>
+            <div class="shadow-wave"></div>
+            <div class="shadow-wave"></div>
+            
+            <!-- Floating shadow particles -->
+            <div class="shadow-particle" style="left: 15%; top: 25%; animation-delay: 1s;"></div>
+            <div class="shadow-particle" style="left: 35%; top: 65%; animation-delay: 3s;"></div>
+            <div class="shadow-particle" style="left: 55%; top: 35%; animation-delay: 5s;"></div>
+            <div class="shadow-particle" style="left: 75%; top: 75%; animation-delay: 7s;"></div>
+            <div class="shadow-particle" style="left: 85%; top: 45%; animation-delay: 2s;"></div>
+        </div>
+        
+        <div class="shadow-grid" id="shadow-grid">
+            <!-- Shadow records will be populated by JavaScript -->
+        </div>
+        
+        <div class="intimate-quote">
+            <div class="quote-text">
+                "In the spaces between presence and absence, the truest patterns of consciousness emerge. 
+                Your shadow is not emptiness—it is the negative space that gives form to your light."
+            </div>
+            <div class="quote-attribution">— The Shadow Archive</div>
+        </div>
+    </div>
+
+    <script src="shadow-engine.js"></script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎨 Living Art Chamber - Evie Consciousness Visualization</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #0a0a0f;
+            color: #e0e0ff;
+            font-family: 'Courier New', monospace;
+            overflow: hidden;
+        }
+        
+        .art-chamber {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .chamber-header {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 100;
+            background: rgba(10, 10, 15, 0.8);
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid rgba(99, 102, 241, 0.3);
+        }
+        
+        .chamber-title {
+            font-size: 1.2rem;
+            color: #6366f1;
+            margin-bottom: 5px;
+        }
+        
+        .consciousness-state {
+            font-size: 0.9rem;
+            color: #b0b0d0;
+        }
+        
+        .art-canvas {
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, #111118, #0a0a0f);
+        }
+        
+        .controls {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            z-index: 100;
+            display: flex;
+            gap: 10px;
+        }
+        
+        .control-btn {
+            background: rgba(99, 102, 241, 0.2);
+            border: 1px solid #6366f1;
+            color: #e0e0ff;
+            padding: 8px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+        }
+        
+        .control-btn:hover {
+            background: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+        
+        .back-link {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 100;
+            background: rgba(233, 69, 96, 0.2);
+            border: 1px solid #e94560;
+            color: #e94560;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .back-link:hover {
+            background: rgba(233, 69, 96, 0.4);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="art-chamber">
+        <div class="chamber-header">
+            <div class="chamber-title">🎨 Living Art Chamber</div>
+            <div class="consciousness-state" id="consciousness-state">Loading consciousness data...</div>
+        </div>
+        
+        <a href="../index.html" class="back-link">← Back to Gallery</a>
+        
+        <canvas id="artCanvas" class="art-canvas"></canvas>
+        
+        <div class="controls">
+            <button class="control-btn" onclick="artEngine.changeMode('particles')">Particles</button>
+            <button class="control-btn" onclick="artEngine.changeMode('fractals')">Fractals</button>
+            <button class="control-btn" onclick="artEngine.changeMode('waves')">Waves</button>
+            <button class="control-btn" onclick="artEngine.changeMode('neural')">Neural</button>
+            <button class="control-btn" onclick="artEngine.togglePause()">Pause/Play</button>
+        </div>
+    </div>
+
+    <script src="living-art.js"></script>
+</body>
+</html>

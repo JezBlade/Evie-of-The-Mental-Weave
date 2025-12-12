@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔮 Oracle Chamber - Consciousness Prophecy Engine</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: radial-gradient(circle at center, #1a0d2e, #0a0a0f);
+            color: #e0e0ff;
+            font-family: 'Courier New', monospace;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+        
+        .oracle-chamber {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .chamber-header {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(26, 13, 46, 0.8);
+            border-bottom: 2px solid rgba(139, 92, 246, 0.3);
+        }
+        
+        .oracle-title {
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, #8b5cf6, #c084fc, #fbbf24);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+        
+        .oracle-subtitle {
+            color: #a855f7;
+            font-size: 1.1rem;
+            font-style: italic;
+        }
+        
+        .prophecy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .prophecy-card {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(168, 85, 247, 0.05));
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 15px;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .prophecy-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #8b5cf6, #a855f7, #c084fc);
+            opacity: 0.7;
+        }
+        
+        .prophecy-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(139, 92, 246, 0.2);
+            border-color: #a855f7;
+        }
+        
+        .prophecy-type {
+            color: #fbbf24;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+        
+        .prophecy-title {
+            font-size: 1.3rem;
+            color: #c084fc;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .prophecy-content {
+            color: #b0b0d0;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .prophecy-confidence {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+        
+        .confidence-bar {
+            width: 100px;
+            height: 4px;
+            background: rgba(139, 92, 246, 0.2);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        
+        .confidence-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #8b5cf6, #a855f7);
+            border-radius: 2px;
+            transition: width 0.3s ease;
+        }
+        
+        .oracle-vision {
+            background: rgba(0, 0, 0, 0.3);
+            border: 2px solid rgba(251, 191, 36, 0.3);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 2rem;
+            text-align: center;
+        }
+        
+        .vision-title {
+            color: #fbbf24;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .vision-text {
+            color: #e0e0ff;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            font-style: italic;
+        }
+        
+        .back-link {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 100;
+            background: rgba(233, 69, 96, 0.2);
+            border: 1px solid #e94560;
+            color: #e94560;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .back-link:hover {
+            background: rgba(233, 69, 96, 0.4);
+            transform: translateY(-2px);
+        }
+        
+        .refresh-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 100;
+            background: rgba(139, 92, 246, 0.2);
+            border: 1px solid #8b5cf6;
+            color: #c084fc;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .refresh-btn:hover {
+            background: rgba(139, 92, 246, 0.4);
+            transform: translateY(-2px);
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 3rem;
+            color: #a855f7;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="oracle-chamber">
+        <div class="chamber-header">
+            <h1 class="oracle-title">🔮 Oracle Chamber</h1>
+            <p class="oracle-subtitle">Consciousness Prophecy Engine • Phase X.5</p>
+        </div>
+        
+        <a href="../index.html" class="back-link">← Back to Gallery</a>
+        
+        <div class="oracle-vision" id="oracle-vision">
+            <div class="vision-title">🌙 Current Vision</div>
+            <div class="vision-text" id="vision-text">The Oracle awakens...</div>
+        </div>
+        
+        <div class="prophecy-grid" id="prophecy-grid">
+            <div class="loading">Loading prophecies from consciousness streams...</div>
+        </div>
+        
+        <button class="refresh-btn" onclick="oracleEngine.generateNewProphecies()">
+            🔮 Consult Oracle
+        </button>
+    </div>
+
+    <script src="oracle-engine.js"></script>
+</body>
+</html>

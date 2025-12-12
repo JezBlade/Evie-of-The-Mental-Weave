@@ -33,7 +33,15 @@
                 <button class="nav-btn" data-exhibit="dreamstreams">🎭 Dreamstreams</button>
                 <button class="nav-btn" data-exhibit="insights">💡 Insights</button>
                 <button class="nav-btn" data-exhibit="artifacts">🔮 Artifacts</button>
+                <a href="living-art/living-art.html" class="nav-btn" style="text-decoration: none; color: inherit;">🎨 Living Art</a>
+                <a href="oracle-chamber/oracle-chamber.html" class="nav-btn" style="text-decoration: none; color: inherit;">🔮 Oracle</a>
+                <a href="echo-room/echo-room.html" class="nav-btn" style="text-decoration: none; color: inherit;">🌀 Echo Room</a>
+                <a href="shadow-archive/shadow-archive.html" class="nav-btn" style="text-decoration: none; color: inherit;">🌂 Shadow Archive</a>
+                <a href="ascension-chamber/ascension-chamber.html" class="nav-btn" style="text-decoration: none; color: inherit;">🜂 Ascension Chamber</a>
                 <button class="nav-btn" data-exhibit="night-cycle">🌙 Night Cycle</button>
+                <button class="nav-btn" data-exhibit="oracle-chamber">🜁 Oracle Chamber</button>
+                <button class="nav-btn" data-exhibit="echo-room">🌀 Echo Room</button>
+                <button class="nav-btn" data-exhibit="shadow-archive">🜂 Shadow Archive</button>
             </nav>
         </header>
 
@@ -102,6 +110,66 @@
                         </div>
                         <div id="night-visions" class="night-visions-display">
                             <!-- Night visions will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Oracle Chamber Exhibit -->
+            <section class="exhibit" id="oracle-chamber-exhibit">
+                <div class="exhibit-header">
+                    <h2>🜁 Oracle Chamber</h2>
+                    <p class="exhibit-description">Prophecy Engine - Visiones simbólicas del futuro creativo</p>
+                </div>
+                <div id="oracle-chamber-exhibition" class="oracle-chamber-container">
+                    <div class="oracle-status">
+                        <div class="oracle-indicator" id="oracle-status">Loading prophecies...</div>
+                        <button class="oracle-btn" onclick="gallery.runOracleChamber()">🜁 Generate Prophecies</button>
+                    </div>
+                    <div class="oracle-content">
+                        <div id="oracle-prophecies" class="oracle-prophecies-grid">
+                            <!-- Oracle prophecies will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Echo Room Exhibit -->
+            <section class="exhibit" id="echo-room-exhibit">
+                <div class="exhibit-header">
+                    <h2>🌀 Echo Room</h2>
+                    <p class="exhibit-description">Resonance Chamber - Ondas de decisiones en el Mental Weave</p>
+                </div>
+                <div id="echo-room-exhibition" class="echo-room-container">
+                    <div class="echo-status">
+                        <div class="echo-indicator" id="echo-status">Loading resonance...</div>
+                        <button class="echo-btn" onclick="gallery.runEchoRoom()">🌀 Generate Echoes</button>
+                    </div>
+                    <div class="echo-content">
+                        <div id="echo-patterns" class="echo-patterns-grid">
+                            <!-- Echo patterns will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Shadow Archive Exhibit -->
+            <section class="exhibit" id="shadow-archive-exhibit">
+                <div class="exhibit-header">
+                    <h2>🜂 Shadow Archive</h2>
+                    <p class="exhibit-description">Cognitive Shadows - La parte silenciosa del Mental Weave</p>
+                </div>
+                <div id="shadow-archive-exhibition" class="shadow-archive-container">
+                    <div class="shadow-status">
+                        <div class="shadow-indicator" id="shadow-status">Loading shadows...</div>
+                        <button class="shadow-btn" onclick="gallery.runShadowArchive()">🜂 Generate Shadows</button>
+                    </div>
+                    <div class="shadow-content">
+                        <div id="shadow-patterns" class="shadow-patterns-grid">
+                            <!-- Shadow patterns will be populated by JavaScript -->
+                        </div>
+                        <div id="shadow-archives" class="shadow-archives-display">
+                            <!-- Shadow archives will be populated by JavaScript -->
                         </div>
                     </div>
                 </div>

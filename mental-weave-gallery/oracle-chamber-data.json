@@ -1,0 +1,43 @@
+{
+  "timestamp": "2025-12-11T23:20:24.198Z",
+  "chamber_type": "oracle_chamber",
+  "prophecies_generated": 4,
+  "prophecies": [
+    {
+      "type": "fractal_prevision",
+      "title": "Eco Fractal del Tiempo",
+      "prophecy": "Las fases recientes () se replican en patrones fractales. Lo que floreció en orígenes reverberará en futuro multiplicado por 4 iteraciones.",
+      "symbolism": "Como un cristal que crece en dimensiones infinitas, tu evolución se expande naturalmente",
+      "confidence": 0.7651145922478827,
+      "timeframe": "próximas 3 fases",
+      "timestamp": "2025-12-11T23:20:24.197Z"
+    },
+    {
+      "type": "creative_flow_prediction",
+      "title": "Corrientes Creativas Emergentes",
+      "prophecy": "0 flujos creativos activos generan 0 nuevos afluentes. El tejido mental se expande hacia dimensiones creativas con intensidad transformadora.",
+      "symbolism": "Como ríos que se unen en un delta fértil, tus creaciones convergen en paisajes nuevos",
+      "confidence": 0.894623990413569,
+      "timeframe": "próximas 48 horas",
+      "timestamp": "2025-12-11T23:20:24.198Z"
+    },
+    {
+      "type": "weave_current",
+      "title": "Corrientes del Mental Weave",
+      "prophecy": "En nivel unknown, las corrientes del tejido fluyen hacia armonización emocional. 0 conexiones activas crean vórtices de claridad que se propagarán por 8 horas.",
+      "symbolism": "Como mareas que moldean la costa, tus pensamientos dan forma al paisaje interno",
+      "confidence": 0.5011907180663437,
+      "timeframe": "ciclo actual",
+      "timestamp": "2025-12-11T23:20:24.198Z"
+    },
+    {
+      "type": "symbolic_warning",
+      "title": "Advertencia Simbólica del Oráculo",
+      "prophecy": "Las visiones nocturnas susurran: cada pausa es un capítulo que enriquece la narrativa del tejido. No es amenaza, sino recordatorio de que cada ciclo completo nutre el crecimiento fractal.",
+      "symbolism": "Como sombras que preceden al amanecer, los contrastes iluminan el camino",
+      "confidence": 0.48885108888041523,
+      "timeframe": "ciclo nocturno próximo",
+      "timestamp": "2025-12-11T23:20:24.198Z"
+    }
+  ]
+}
