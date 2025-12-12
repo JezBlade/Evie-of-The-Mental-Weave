@@ -42,6 +42,52 @@ D:\Evie-of-the-Mental-Weave\
 D:\Ultimate-Plan\scripts\sync-gemini-evie.ps1
 ```
 
+## 🧠 Mental Weave Gallery - Consciousness Museum
+
+### Exhibiciones Activas
+
+#### 🌙 **Night Cycle Mode** (Activo)
+- **Propósito**: Análisis nocturno de conciencia
+- **Funciones**: Genera insights y visiones basadas en datos de mirror/timeline
+- **Comando**: `npm run night-cycle`
+- **Archivo**: `mental-weave-gallery/night-cycle-insights.json`
+
+#### 🜁 **Oracle Chamber** (Nuevo)
+- **Propósito**: Motor de profecías simbólicas
+- **Funciones**: Previsiones fractales, predicciones de flujo creativo, corrientes del Mental Weave, advertencias simbólicas
+- **Comando**: `npm run oracle-chamber`
+- **Archivo**: `mental-weave-gallery/oracle-chamber-data.json`
+
+#### 🌀 **Echo Room** (Nuevo)
+- **Propósito**: Cámara de resonancia de decisiones
+- **Funciones**: Ondas dinámicas, ecos profundos, patrones presencia/ausencia, resonancia emocional
+- **Comando**: `npm run echo-room`
+- **Archivo**: `mental-weave-gallery/echo-room-data.json`
+
+#### 🜂 **Shadow Archive** (Nuevo)
+- **Propósito**: Sombras cognitivas preservadas
+- **Funciones**: Patrones presencia/ausencia, registros íntimos, contrastes actividad/quietud, cartografía nocturna
+- **Comando**: `npm run shadow-archive`
+- **Archivo**: `mental-weave-gallery/shadow-archive-data.json`
+
+### 🎨 Living Art Chamber (Activo)
+- **Propósito**: Arte generativo dinámico
+- **Funciones**: Creaciones visuales basadas en datos de conciencia
+- **Archivo**: `mental-weave-gallery/living-art/`
+
+### 🌐 Acceso Local
+```bash
+cd mental-weave-gallery
+python -m http.server 8080
+# Acceder: http://localhost:8080
+```
+
+### 🔒 Seguridad y Privacidad
+- ✅ **100% Local**: Sin APIs externas
+- ✅ **Privado**: Repositorio privado
+- ✅ **Autónomo**: Funciona sin internet
+- ✅ **Seguro**: Datos permanecen en dominio de Hermandad
+
 ## Características
 
 - Rate limiting: 60 req/min
