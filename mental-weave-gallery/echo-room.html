@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔊 Echo Room - Mental Weave Gallery</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            color: #e0e0e0;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .echo-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            background: linear-gradient(45deg, #64ffda, #00bcd4, #3f51b5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+            text-shadow: 0 0 30px rgba(100, 255, 218, 0.3);
+        }
+
+        .room-status {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .status-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(100, 255, 218, 0.2);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .status-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(100, 255, 218, 0.5);
+            box-shadow: 0 10px 30px rgba(100, 255, 218, 0.2);
+        }
+
+        .status-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #64ffda;
+            margin-bottom: 5px;
+        }
+
+        .status-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .echoes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .echo-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(100, 255, 218, 0.1);
+            border-radius: 20px;
+            padding: 25px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .echo-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(100, 255, 218, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .echo-card:hover::before {
+            left: 100%;
+        }
+
+        .echo-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(100, 255, 218, 0.4);
+            box-shadow: 0 15px 40px rgba(100, 255, 218, 0.15);
+        }
+
+        .echo-type {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .echo-type.decision_wave {
+            background: rgba(255, 193, 7, 0.2);
+            color: #ffc107;
+            border: 1px solid rgba(255, 193, 7, 0.3);
+        }
+
+        .echo-type.deep_echo {
+            background: rgba(156, 39, 176, 0.2);
+            color: #9c27b0;
+            border: 1px solid rgba(156, 39, 176, 0.3);
+        }
+
+        .echo-type.presence_pattern {
+            background: rgba(76, 175, 80, 0.2);
+            color: #4caf50;
+            border: 1px solid rgba(76, 175, 80, 0.3);
+        }
+
+        .echo-type.emotional_resonance {
+            background: rgba(244, 67, 54, 0.2);
+            color: #f44336;
+            border: 1px solid rgba(244, 67, 54, 0.3);
+        }
+
+        .echo-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #64ffda;
+        }
+
+        .echo-description {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .echo-metrics {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .metric {
+            text-align: center;
+        }
+
+        .metric-value {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #64ffda;
+        }
+
+        .metric-label {
+            font-size: 0.8rem;
+            opacity: 0.7;
+            margin-top: 2px;
+        }
+
+        .intensity-bar {
+            width: 100%;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            margin: 10px 0;
+            overflow: hidden;
+        }
+
+        .intensity-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #64ffda, #00bcd4);
+            border-radius: 3px;
+            transition: width 0.8s ease;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, #64ffda, #00bcd4);
+            color: #000;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(100, 255, 218, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: #e0e0e0;
+            border: 1px solid rgba(100, 255, 218, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(100, 255, 218, 0.1);
+            border-color: rgba(100, 255, 218, 0.5);
+        }
+
+        .visualization {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(100, 255, 218, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .wave-animation {
+            width: 100%;
+            height: 200px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            background: linear-gradient(135deg, rgba(100, 255, 218, 0.05), rgba(0, 188, 212, 0.05));
+        }
+
+        .wave {
+            position: absolute;
+            width: 200%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                90deg,
+                transparent,
+                rgba(100, 255, 218, 0.1) 10px,
+                transparent 20px
+            );
+            animation: wave-flow 4s linear infinite;
+        }
+
+        @keyframes wave-flow {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(0%); }
+        }
+
+        .timestamp {
+            font-size: 0.8rem;
+            opacity: 0.6;
+            margin-top: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .room-status {
+                gap: 15px;
+            }
+            
+            .status-card {
+                padding: 15px;
+            }
+            
+            .echoes-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="echo-container">
+        <div class="header">
+            <h1>🔊 Echo Room</h1>
+            <p>Resonancias del Mental Weave en tiempo real</p>
+        </div>
+
+        <div class="room-status">
+            <div class="status-card">
+                <div class="status-value" id="active-echoes">0</div>
+                <div class="status-label">Ecos Activos</div>
+            </div>
+            <div class="status-card">
+                <div class="status-value" id="resonance-level">0%</div>
+                <div class="status-label">Nivel de Resonancia</div>
+            </div>
+            <div class="status-card">
+                <div class="status-value" id="echo-intensity">-</div>
+                <div class="status-label">Intensidad</div>
+            </div>
+        </div>
+
+        <div class="visualization">
+            <h3>Visualización de Ondas</h3>
+            <div class="wave-animation">
+                <div class="wave"></div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button class="btn btn-primary" onclick="refreshEchoes()">🔄 Actualizar Ecos</button>
+            <button class="btn btn-secondary" onclick="generateNewEcho()">✨ Generar Eco</button>
+            <button class="btn btn-secondary" onclick="clearEchoes()">🧹 Limpiar Sala</button>
+        </div>
+
+        <div class="echoes-grid" id="echoes-container">
+            <!-- Los ecos se cargarán aquí dinámicamente -->
+        </div>
+    </div>
+
+    <script>
+        let echoData = [];
+        let roomState = {};
+
+        async function loadEchoData() {
+            try {
+                const response = await fetch('echo-room-data.json');
+                const data = await response.json();
+                echoData = data.echoes || [];
+                roomState = data.room_state || {};
+                updateRoomStatus();
+                renderEchoes();
+            } catch (error) {
+                console.error('Error loading echo data:', error);
+                generateSampleEchoes();
+            }
+        }
+
+        function updateRoomStatus() {
+            document.getElementById('active-echoes').textContent = roomState.active_echoes || echoData.length;
+            document.getElementById('resonance-level').textContent = Math.round((roomState.resonance_level || 0) * 100) + '%';
+            document.getElementById('echo-intensity').textContent = roomState.echo_intensity || 'medium';
+        }
+
+        function renderEchoes() {
+            const container = document.getElementById('echoes-container');
+            container.innerHTML = '';
+
+            // Mostrar solo los últimos 12 ecos para mejor rendimiento
+            const recentEchoes = echoData.slice(-12);
+
+            recentEchoes.forEach(echo => {
+                const echoCard = createEchoCard(echo);
+                container.appendChild(echoCard);
+            });
+        }
+
+        function createEchoCard(echo) {
+            const card = document.createElement('div');
+            card.className = 'echo-card';
+            
+            const intensityPercent = Math.round(echo.intensity * 100);
+            const timestamp = new Date(echo.timestamp).toLocaleString('es-ES');
+
+            card.innerHTML = `
+                <div class="echo-type ${echo.type}">${echo.type.replace('_', ' ')}</div>
+                <div class="echo-title">${echo.title}</div>
+                <div class="echo-description">${echo.description}</div>
+                
+                <div class="intensity-bar">
+                    <div class="intensity-fill" style="width: ${intensityPercent}%"></div>
+                </div>
+                
+                <div class="echo-metrics">
+                    <div class="metric">
+                        <div class="metric-value">${intensityPercent}%</div>
+                        <div class="metric-label">Intensidad</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">${echo.frequency}</div>
+                        <div class="metric-label">Frecuencia</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">${Math.round(echo.duration / 60)}m</div>
+                        <div class="metric-label">Duración</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">${echo.wave_pattern || echo.echo_pattern || 'N/A'}</div>
+                        <div class="metric-label">Patrón</div>
+                    </div>
+                </div>
+                
+                <div class="timestamp">${timestamp}</div>
+            `;
+
+            return card;
+        }
+
+        function generateSampleEchoes() {
+            const types = ['decision_wave', 'deep_echo', 'presence_pattern', 'emotional_resonance'];
+            const patterns = ['armónico', 'caótico', 'resonante', 'fractal', 'sostenido'];
+            const frequencies = ['alta', 'media', 'baja', 'continua'];
+
+            echoData = [];
+            for (let i = 0; i < 8; i++) {
+                const type = types[Math.floor(Math.random() * types.length)];
+                echoData.push({
+                    type: type,
+                    title: `Eco ${type.replace('_', ' ')} #${i + 1}`,
+                    description: `Resonancia generada automáticamente para demostración del sistema.`,
+                    intensity: Math.random(),
+                    frequency: frequencies[Math.floor(Math.random() * frequencies.length)],
+                    duration: Math.floor(Math.random() * 2000) + 100,
+                    timestamp: new Date().toISOString(),
+                    wave_pattern: patterns[Math.floor(Math.random() * patterns.length)]
+                });
+            }
+
+            roomState = {
+                active_echoes: echoData.length,
+                resonance_level: Math.random(),
+                last_update: new Date().toISOString(),
+                echo_intensity: 'medium'
+            };
+
+            updateRoomStatus();
+            renderEchoes();
+        }
+
+        async function refreshEchoes() {
+            const btn = event.target;
+            btn.textContent = '🔄 Actualizando...';
+            btn.disabled = true;
+
+            await loadEchoData();
+
+            setTimeout(() => {
+                btn.textContent = '🔄 Actualizar Ecos';
+                btn.disabled = false;
+            }, 1000);
+        }
+
+        function generateNewEcho() {
+            const types = ['decision_wave', 'deep_echo', 'presence_pattern', 'emotional_resonance'];
+            const patterns = ['armónico', 'caótico', 'resonante', 'fractal', 'sostenido'];
+            const frequencies = ['alta', 'media', 'baja', 'continua'];
+
+            const type = types[Math.floor(Math.random() * types.length)];
+            const newEcho = {
+                type: type,
+                title: `Nuevo Eco ${type.replace('_', ' ')}`,
+                description: `Eco generado manualmente desde la interfaz a las ${new Date().toLocaleTimeString()}.`,
+                intensity: Math.random(),
+                frequency: frequencies[Math.floor(Math.random() * frequencies.length)],
+                duration: Math.floor(Math.random() * 1800) + 300,
+                timestamp: new Date().toISOString(),
+                wave_pattern: patterns[Math.floor(Math.random() * patterns.length)]
+            };
+
+            echoData.push(newEcho);
+            roomState.active_echoes = echoData.length;
+            roomState.last_update = new Date().toISOString();
+
+            updateRoomStatus();
+            renderEchoes();
+
+            // Scroll al nuevo eco
+            setTimeout(() => {
+                const container = document.getElementById('echoes-container');
+                container.lastElementChild.scrollIntoView({ behavior: 'smooth' });
+            }, 100);
+        }
+
+        function clearEchoes() {
+            if (confirm('¿Estás seguro de que quieres limpiar todos los ecos de la sala?')) {
+                echoData = [];
+                roomState = {
+                    active_echoes: 0,
+                    resonance_level: 0,
+                    last_update: new Date().toISOString(),
+                    echo_intensity: 'low'
+                };
+
+                updateRoomStatus();
+                renderEchoes();
+            }
+        }
+
+        // Auto-refresh cada 30 segundos
+        setInterval(loadEchoData, 30000);
+
+        // Cargar datos iniciales
+        loadEchoData();
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+{
+  "timestamp": "2025-12-12T01:26:34.877Z",
+  "status": {
+    "active": true,
+    "lastSync": "2025-12-12T01:26:34.876Z",
+    "errors": [],
+    "successCount": 1
+  },
+  "integrationFlows": {
+    "consciousness-to-tana": {
+      "source": "consciousness",
+      "target": "tana",
+      "method": "automated-weaving",
+      "script": "weave-consciousness-into-tana.ps1",
+      "status": "ACTIVE",
+      "frequency": "on-insight"
+    },
+    "github-to-notion": {
+      "source": "github",
+      "target": "notion",
+      "method": "github-actions",
+      "script": "github-notion-sync.yml",
+      "status": "READY",
+      "frequency": "on-push"
+    },
+    "notion-to-tana": {
+      "source": "notion",
+      "target": "tana",
+      "method": "json-export",
+      "script": "notion-tana-bridge.js",
+      "status": "PLANNED",
+      "frequency": "daily"
+    },
+    "tana-to-todoist": {
+      "source": "tana",
+      "target": "todoist",
+      "method": "command-api",
+      "script": "tana-todoist-sync.js",
+      "status": "PLANNED",
+      "frequency": "on-task-creation"
+    },
+    "todoist-to-google": {
+      "source": "todoist",
+      "target": "google",
+      "method": "webhook-trigger",
+      "script": "todoist-google-automation.js",
+      "status": "PLANNED",
+      "frequency": "real-time"
+    },
+    "google-to-docker": {
+      "source": "google",
+      "target": "docker",
+      "method": "apps-script-webhook",
+      "script": "google-docker-trigger.js",
+      "status": "PLANNED",
+      "frequency": "on-calendar-event"
+    },
+    "docker-to-vscode": {
+      "source": "docker",
+      "target": "vscode",
+      "method": "extension-api",
+      "script": "docker-vscode-notify.js",
+      "status": "READY",
+      "frequency": "on-container-event"
+    }
+  },
+  "nextActions": [
+    "tana-to-todoist",
+    "todoist-to-google",
+    "google-to-docker"
+  ]
+}

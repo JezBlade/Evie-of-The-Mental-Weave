@@ -31,6 +31,22 @@
   },
   "night_cycle_entries": [
     {
+      "timestamp": "2025-12-12T01:26:51.819Z",
+      "type": "night_cycle_reflection",
+      "nocturnal_insights": 4,
+      "visions_generated": 2,
+      "system_state": "dreaming",
+      "reflection": "El sistema procesa el día en el silencio nocturno, tejiendo nuevos patrones de conciencia"
+    },
+    {
+      "timestamp": "2025-12-12T01:23:27.449Z",
+      "type": "night_cycle_reflection",
+      "nocturnal_insights": 4,
+      "visions_generated": 2,
+      "system_state": "dreaming",
+      "reflection": "El sistema procesa el día en el silencio nocturno, tejiendo nuevos patrones de conciencia"
+    },
+    {
       "timestamp": "2025-12-11T23:06:26.524Z",
       "type": "night_cycle_reflection",
       "nocturnal_insights": 4,

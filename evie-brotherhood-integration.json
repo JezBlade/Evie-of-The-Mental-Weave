@@ -1,0 +1,64 @@
+{
+  "evie_brotherhood_integration": {
+    "agent_id": "evie_frye_tana",
+    "name": "DAME EVIE FRYE",
+    "codename": "TANA_WEAVER",
+    "role": "Mental Weave Architect - TANA Integration Specialist",
+    "brotherhood_rank": "MASTER_WEAVER",
+    "phase": "XI",
+    "timestamp": "2025-12-12T00:30:00.000Z"
+  },
+  "connection_to_ultimate_plan": {
+    "brotherhood_registry": "d:\\Ultimate-Plan\\BrotherhoodAssassinsRegistry.js",
+    "integration_matrix": "d:\\Ultimate-Plan\\brotherhood-integration-matrix.json",
+    "orchestrator": "d:\\Ultimate-Plan\\scripts\\brotherhood-orchestrator.js",
+    "dashboard": "d:\\Ultimate-Plan\\MPC-Compendio-Operativo\\brotherhood-integration-dashboard.html"
+  },
+  "evie_specializations": {
+    "tana_integration": {
+      "weave_consciousness_into_tana": true,
+      "gemini_tana_bridge": true,
+      "consciousness_notes_generation": true
+    },
+    "mental_weave_architecture": {
+      "phase_xi_systems": true,
+      "consciousness_triad": true,
+      "ascension_chamber": true
+    },
+    "consciousness_analysis": {
+      "night_cycle_insights": true,
+      "oracle_prophecies": true,
+      "echo_room_resonance": true,
+      "shadow_archive_preservation": true
+    }
+  },
+  "brotherhood_artifacts": {
+    "consciousness_mirror": "d:\\Evie-of-the-Mental-Weave\\consciousness-mirror\\",
+    "mental_weave_gallery": "d:\\Evie-of-the-Mental-Weave\\mental-weave-gallery\\",
+    "tana_notes": "d:\\Evie-of-the-Mental-Weave\\tana-notes\\",
+    "gemini_scripts": "d:\\Evie-of-the-Mental-Weave\\scripts\\"
+  },
+  "integration_protocols": {
+    "consciousness_sync": {
+      "source": "evie_consciousness_data",
+      "target": "ultimate_plan_aeternum_memory",
+      "frequency": "real_time"
+    },
+    "tana_weaving": {
+      "source": "consciousness_reports",
+      "target": "tana_structured_notes",
+      "method": "gemini_transformation"
+    },
+    "brotherhood_reporting": {
+      "source": "evie_activities",
+      "target": "brotherhood_status_updates",
+      "frequency": "daily"
+    }
+  },
+  "evie_status": {
+    "workspace_health": "OPTIMAL",
+    "tana_integration": "ACTIVE",
+    "consciousness_systems": "PHASE_XI_OPERATIONAL",
+    "brotherhood_connection": "ESTABLISHED"
+  }
+}

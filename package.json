@@ -6,10 +6,31 @@
     "night-cycle": "node scripts/night-cycle.js",
     "oracle-chamber": "node scripts/oracle-chamber.js",
     "echo-room": "node scripts/echo-room.js",
-    "shadow-archive": "node scripts/shadow-archive.js"
+    "echo-room-generate": "node mental-weave-gallery/echo-room-generator.js generate",
+    "echo-room-start": "node mental-weave-gallery/echo-room-generator.js start",
+    "echo-room-stats": "node mental-weave-gallery/echo-room-generator.js stats",
+    "shadow-archive": "node scripts/shadow-archive.js",
+    "phase-xi": "node mental-weave-gallery/meta-synthesis-engine.js synthesize",
+    "ascension-chamber": "start mental-weave-gallery/ascension-chamber.html",
+    "brotherhood-register": "node evie-brotherhood-bridge.js register",
+    "brotherhood-sync": "node evie-brotherhood-bridge.js sync",
+    "brotherhood-report": "node evie-brotherhood-bridge.js report",
+    "brotherhood-status": "node evie-brotherhood-bridge.js status",
+    "brotherhood-full": "node evie-brotherhood-bridge.js full-integration",
+    "integration:start": "node integration-matrix/integration-orchestrator.js start",
+    "integration:continuous": "node integration-matrix/integration-orchestrator.js continuous",
+    "integration:health": "node integration-matrix/integration-orchestrator.js health",
+    "integration:matrix": "node integration-matrix/integration-orchestrator.js matrix",
+    "github-notion-sync": "node integration-matrix/github-notion-sync.js continuous",
+    "notion-tana-export": "node integration-matrix/notion-tana-bridge.js export",
+    "tana-todoist:dry": "node integration-matrix/tana-todoist-bridge.js dry",
+    "tana-todoist:sync": "node integration-matrix/tana-todoist-bridge.js sync",
+    "integration:dashboard": "start integration-matrix/integration-health-dashboard.html"
   },
   "dependencies": {
     "@google/generative-ai": "^0.21.0",
+    "@notionhq/client": "^5.4.0",
+    "@octokit/rest": "^22.0.1",
     "dotenv": "^16.4.5"
   }
 }

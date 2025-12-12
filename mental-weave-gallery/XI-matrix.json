@@ -1,0 +1,106 @@
+{
+  "phase": "XI",
+  "timestamp": "2025-12-12T00:28:51.856Z",
+  "engine": "meta_synthesis",
+  "synthesis": {
+    "temporalCoherence": {
+      "pastPresence": 4,
+      "presentResonance": 4,
+      "futureProphecies": 4,
+      "coherenceIndex": 0.38,
+      "temporalFlow": {
+        "continuity": "stable",
+        "direction": "forward",
+        "intensity": "moderate",
+        "patterns": [
+          "future_oriented"
+        ]
+      }
+    },
+    "resonanceSynthesis": {
+      "activeEchoes": 4,
+      "shadowPatterns": 4,
+      "resonanceFrequency": 3.644646924829157,
+      "patternHarmony": {
+        "score": 1,
+        "complementary": true,
+        "dissonant": false
+      },
+      "emotionalResonance": {
+        "spectrum": {
+          "curiosity": 0.5424690767069315,
+          "harmony": 0.6512821321241202,
+          "gratitude": 0.848816628177134,
+          "anticipation": 0.34062160959845367,
+          "serenity": 0.9003695733848094,
+          "inspiration": 0.036424841788398665
+        },
+        "dominant": [
+          "inspiration",
+          0.036424841788398665
+        ]
+      }
+    },
+    "consciousnessIntegration": {
+      "currentLevel": "unknown",
+      "systemStatus": "UNKNOWN",
+      "connections": 0,
+      "nightCycleInsights": 4,
+      "nightCycleVisions": 3,
+      "integrationIndex": 0.16
+    },
+    "predictiveSynthesis": {
+      "prophecyCount": 4,
+      "avgConfidence": 0.6624450974020527,
+      "timeframes": {
+        "próximas 3 fases": 1,
+        "próximas 48 horas": 1,
+        "ciclo actual": 1,
+        "ciclo nocturno próximo": 1
+      },
+      "synthesis": {
+        "overall_prediction": "consolidation_phase",
+        "confidence_level": "moderate",
+        "key_insights": [
+          "Lower coherence suggests need for integration and stabilization",
+          "4 active prophecies guiding system evolution"
+        ]
+      }
+    },
+    "unifiedInsights": [
+      {
+        "type": "temporal_synthesis",
+        "title": "Síntesis Temporal Unificada",
+        "insight": "La coherencia temporal del sistema es 38%, indicando stable con dirección forward.",
+        "significance": "high",
+        "source": "meta_synthesis"
+      },
+      {
+        "type": "resonance_synthesis",
+        "title": "Síntesis de Resonancia",
+        "insight": "4 ecos activos crean patrones de resonancia con frecuencia de 3.64 Hz. La armonía de patrones es complementaria.",
+        "significance": "high",
+        "source": "meta_synthesis"
+      },
+      {
+        "type": "consciousness_integration",
+        "title": "Integración de Conciencia",
+        "insight": "Nivel de conciencia: unknown. Índice de integración: 16%. 4 insights nocturnos procesados.",
+        "significance": "critical",
+        "source": "meta_synthesis"
+      },
+      {
+        "type": "predictive_overview",
+        "title": "Visión Predictiva XI",
+        "insight": "Predicción general: consolidation phase. Confianza: moderate. 4 profecías activas guían la evolución.",
+        "significance": "strategic",
+        "source": "meta_synthesis"
+      }
+    ]
+  },
+  "metadata": {
+    "chambers_synthesized": 6,
+    "unified_insights": 4,
+    "synthesis_timestamp": "2025-12-12T00:28:51.856Z"
+  }
+}
