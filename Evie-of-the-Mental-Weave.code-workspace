@@ -1,0 +1,552 @@
+{
+  "folders": [
+    {
+      "path": "D:/Evie-of-the-Mental-Weave",
+      "name": "D:/Evie-of-the-Mental-Weave"
+    }
+  ],
+
+  "settings": {
+    // --- Exclusión de archivos/folders no deseados ---
+    "files.exclude": {
+      // Exclusiones principales (blindaje)
+      "**/.git": true,
+      "**/node_modules": true,
+      "**/.venv": true,
+      "**/__pycache__": true,
+      "**/*.log": true,
+      "**/*.tmp": true,
+      "**/*.bak": true,
+      "**/tmp": true,
+      "**/temp": true,
+      "**/target": true,
+      "**/build": true,
+      "**/dist": true,
+      "**/out": true,
+      "**/bin": true,
+      "**/.pytest_cache": true,
+      ".mypy_cache": true,
+      ".parcel-cache": true,
+      ".eslintcache": true,
+      ".vscode-test": true,
+      ".test-results": true,
+      ".coverage": true,
+      ".nyc_output": true,
+      ".cypress/": true,
+      ".playwright/": true,
+      ".serverless/": true,
+      ".firebase/": true,
+      ".vercel/": true,
+      ".netlify/": true,
+      ".terraform/": true,
+      ".docker/": true,
+      ".aws-sam/": true,
+      ".npm/": true,
+      ".yarn/": true,
+      ".pnpm/": true,
+      ".jspm_packages/": true,
+      ".bower_components/": true,
+      ".next/": true,
+      ".nuxt/": true,
+      ".angular/": true,
+      ".sass-cache/": true,
+      ".storybook/": true,
+      ".expo/": true,
+      ".meteor/": true,
+      ".ember-cli/": true,
+      // Exclusiones redundantes intencionales para rutas anidadas
+      ".vscode/": true,
+      "**/.vscode/**": true,
+      "Program-Files/": true,
+      "Program-Files/VSCode/": true,
+      "phase_xii_backup/": true,
+      "Program-Files/Downloads/archives/**": true,
+      "logs/": true,
+      "reports/": true,
+      "Universo-Multiclub/": true,
+      "**/Universo-Multiclub/**": true,
+      // Exclusiones de carpetas pesadas identificadas
+      "__SYNTHESIS__/": true,
+      "**/__SYNTHESIS__/**": true,
+      "backups/": true,
+      "**/backups/**": true,
+      "actions-runner/": true,
+      "**/actions-runner/**": true,
+      "MASTER/": true,
+      "**/MASTER/**": true,
+      "SuperAGI/": true,
+      "**/SuperAGI/**": true,
+      "JezBlade-ultimate-plan-media/": true,
+      "**/JezBlade-ultimate-plan-media/**": true,
+      "eslint-repro/": true,
+      "sync-state/": true,
+      "**/sync-state/**": true,
+      // Exclusiones de datos de extensiones y herramientas
+      ".amazonq/": true,
+      ".copilot-memory/": true,
+      ".cursor/": true,
+      ".husky/": true,
+      // Exclusión de secretos y archivos sensibles
+      "**/secrets*/**": true,
+      "**/.copilot-secrets/**": true,
+      "**/.env": true,
+      "**/.env.*": true,
+      "**/credentials.json": true,
+      "**/token.json": true,
+      "**/*.pem": true,
+      "**/*.key": true,
+      "**/*.crt": true,
+      // Archivos temporales de migración y purificación
+      ".tmp_workspace_clean.code-workspace": true,
+      ".tmp_workspace_diff.txt": true,
+      "purificacion_log_*.txt": true,
+      "restore_migration_log.txt": true
+    },
+
+    "search.followSymlinks": false,
+
+    "files.watcherExclude": {
+      "**/.git/objects/**": true,
+      "**/.git/subtree-cache/**": true,
+      "**/node_modules/**": true,
+      "**/.venv/**": true,
+      "Program-Files/**": true,
+      "Program-Files/Downloads/archives/**": true,
+      "Program-Files/VSCode/**": true,
+      "phase_xii_backup/**": true,
+      "logs/**": true,
+      "reports/**": true,
+      ".vscode/**": true,
+      "**/.vscode/**": true,
+      "Universo-Multiclub/**": true,
+      "__SYNTHESIS__/**": true,
+      "backups/**": true,
+      "actions-runner/**": true,
+      "MASTER/**": true,
+      "SuperAGI/**": true,
+      "JezBlade-ultimate-plan-media/**": true,
+      "eslint-repro/**": true,
+      "sync-state/**": true,
+      ".amazonq/**": true,
+      ".copilot-memory/**": true,
+      ".cursor/**": true,
+      ".husky/**": true
+    },
+
+    "search.exclude": {
+      ".vscode/": true,
+      "**/.vscode/**": true,
+      "Program-Files/": true,
+      "Program-Files/Downloads/archives/**": true,
+      "Program-Files/VSCode/": true,
+      "phase_xii_backup/": true,
+      "logs/": true,
+      "reports/": true,
+      "Universo-Multiclub/": true,
+      "**/Universo-Multiclub/**": true,
+      "__SYNTHESIS__/": true,
+      "**/__SYNTHESIS__/**": true,
+      "backups/": true,
+      "**/backups/**": true,
+      "actions-runner/": true,
+      "**/actions-runner/**": true,
+      "MASTER/": true,
+      "**/MASTER/**": true,
+      "SuperAGI/": true,
+      "**/SuperAGI/**": true,
+      "JezBlade-ultimate-plan-media/": true,
+      "**/JezBlade-ultimate-plan-media/**": true,
+      "eslint-repro/": true,
+      "sync-state/": true,
+      "**/sync-state/**": true,
+      ".amazonq/": true,
+      ".copilot-memory/": true,
+      ".cursor/": true,
+      ".husky/": true,
+      "**/node_modules/**": true,
+      "**/.git": true,
+      "**/.venv": true,
+      "**/backup": true,
+      "**/backups": true,
+      "**/archive": true,
+      "**/tmp": true,
+      "**/temp": true,
+      "**/target": true,
+      "**/build": true,
+      "**/dist": true,
+      "**/out": true,
+      "**/bin": true,
+      "**/coverage": true,
+      "**/secrets*/**": true,
+      "**/.copilot-secrets/**": true,
+      "**/.env*": true,
+      "**/credentials.json": true,
+      "**/private_keys/**": true
+    },
+
+    // --- Asociaciones de archivos ---
+    "files.associations": {
+      "*.md": "markdown",
+      "*.js": "javascript",
+      "*.jsx": "javascriptreact",
+      "*.ts": "typescript",
+      "*.tsx": "typescriptreact",
+      "*.ps1": "powershell",
+      "rituales.md": "markdown",
+      "bitacora.md": "markdown",
+      "trazabilidad_canonica.md": "markdown",
+      "Ultimate-Plan.code-workspace": "json"
+    },
+
+    // --- Formato y apariencia ---
+    "prettier.configPath": "${workspaceFolder}/.prettierrc.js",
+    "editor.fontSize": 16,
+    "editor.lineHeight": 24,
+    "chat.editor.fontSize": 17,
+    "chat.editor.fontWeight": "normal",
+    "chat.editor.lineHeight": 1.6,
+    "workbench.chat.fontSize": 20,
+    "github.copilot.chat.fontSize": 20,
+    "copilot.chat.fontSize": 20,
+    "inlineChat.fontSize": 20,
+    "markdown.extension.preview.fontSize": 20,
+    "scm.inputFontSize": 16,
+    "workbench.fontAliasing": "antialiased",
+    "editor.fontFamily": "'Cascadia Code', 'Fira Code', 'JetBrains Mono', Consolas, 'Courier New', monospace",
+    "editor.fontLigatures": true,
+    "editor.smoothScrolling": true,
+    "editor.cursorBlinking": "phase",
+    // workbench.iconTheme: null desactiva iconos a nivel local. Si deseas iconos, usa "vscode-icons" o elimina esta línea.
+    "workbench.iconTheme": null,
+    "workbench.colorTheme": "Default Dark Modern",
+    "workbench.startupEditor": "none",
+    "window.title": "Ultimate Plan Brotherhood Workspace",
+
+    // --- Terminal y entornos ---
+    // NOTA: Si tu VSCode no reconoce el perfil "PowerShell 7 (Brotherhood)", selecciona manualmente el perfil desde la UI o usa "PowerShell" aquí.
+    "terminal.integrated.defaultProfile.windows": "PowerShell (pwsh)",
+    "terminal.integrated.env.windows": {
+      "ULTIMATE_PLAN_PATH": "D:/Ultimate-Plan",
+      "ULTIMATE_PLAN_PROGRAM_FILES": "D:/Ultimate-Plan/Program-Files",
+      "PIP_CACHE_DIR": "D:/Ultimate-Plan/Program-Files/pip-cache",
+      "NPM_CONFIG_CACHE": "D:/Ultimate-Plan/Program-Files/npm-cache",
+      "ASSASSINS_VSIX_DIR": "D:/Ultimate-Plan/Assassins-VSIX",
+      "ASSASSINS_REGISTRY_URL": "http://localhost:3000/api",
+      "ASSASSINS_ENV_FILE": "D:/Ultimate-Plan/Program-Files/.env",
+      "BROTHERHOOD_HMAC_SECRET": ""
+    },
+    "terminal.integrated.fontSize": 16,
+    "terminal.integrated.fontFamily": "'Cascadia Code', 'Fira Code', 'JetBrains Mono', Consolas, monospace",
+    "terminal.integrated.fontWeight": "normal",
+    "terminal.integrated.fontWeightBold": "bold",
+    "terminal.integrated.lineHeight": 1.2,
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.cursorStyle": "block",
+    "terminal.integrated.cursorWidth": 2,
+    "terminal.integrated.scrollback": 10000,
+    "terminal.integrated.fastScrollSensitivity": 5,
+    "terminal.integrated.smoothScrolling": true,
+    "terminal.integrated.mouseWheelScrollSensitivity": 3,
+    "terminal.integrated.enableVisualBell": false,
+    "accessibility.signals.terminalBell": { "sound": "off" },
+    "terminal.integrated.copyOnSelection": true,
+    "terminal.integrated.rightClickBehavior": "paste",
+    "terminal.integrated.drawBoldTextInBrightColors": true,
+    "terminal.integrated.minimumContrastRatio": 4.5,
+    "terminal.integrated.showExitAlert": false,
+    "terminal.integrated.confirmOnExit": "hasChildProcesses",
+    "terminal.integrated.confirmOnKill": "editor",
+    "terminal.integrated.shellIntegration.enabled": true,
+    "terminal.integrated.shellIntegration.decorationsEnabled": "both",
+    "terminal.integrated.shellIntegration.history": 1000,
+    "terminal.integrated.shellIntegration.suggestEnabled": true,
+    "terminal.integrated.enablePersistentSessions": true,
+    "terminal.integrated.persistentSessionReviveProcess": "onExit",
+    "terminal.integrated.localEchoEnabled": "auto",
+    "terminal.integrated.localEchoLatencyThreshold": 30,
+    "terminal.integrated.localEchoExcludePrograms": [
+      "vim",
+      "vi",
+      "nano",
+      "tmux"
+    ],
+    "terminal.integrated.altClickMovesCursor": true,
+    "terminal.integrated.commandsToSkipShell": [
+      "workbench.action.togglePanel"
+    ],
+    "terminal.integrated.allowMnemonics": true,
+    "terminal.integrated.inheritEnv": true,
+    "terminal.integrated.cwd": "${workspaceFolder}",
+    "terminal.integrated.splitCwd": "workspaceRoot",
+
+    // --- Perfiles ritualizados (ajusta según tus paths locales, revisa nombres) ---
+    "terminal.integrated.profiles.windows": {
+      "PowerShell (pwsh)": {
+        "path": "D:/Ultimate-Plan/Program-Files/PowerShell/7/pwsh.exe",
+        "args": ["-NoLogo"],
+        "icon": "terminal-powershell"
+      }
+    },
+
+    // --- Python AI y linter ritualizados ---
+    "python.defaultInterpreterPath": "D:/Ultimate-Plan/Program-Files/venv/Scripts/python.exe",
+    "python.venvPath": "D:/Ultimate-Plan/Program-Files",
+    "python.terminal.activateEnvironment": true,
+    "python.formatting.provider": "none",
+    "python.linting.enabled": false,
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": false,
+    "ruff.enable": true,
+    "ruff.organizeImports": true,
+    "ruff.fixAll": true,
+    "ruff.showSyntaxErrors": true,
+    // editor.defaultFormatter: null permite que Ruff y Prettier gestionen el formato según archivo. Si Prettier no se activa en .md/.json, revisa configuración global.
+    "editor.defaultFormatter": null,
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "explicit",
+      "source.organizeImports": "always",
+      "source.fixAll.eslint": "explicit"
+    },
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "eslint.workingDirectories": [
+      "./"
+    ],
+    "python.analysis.extraPaths": [
+      "scripts",
+      "Aeternum-Memory",
+      "Program-Files/Herramientas_Compartidas",
+      "Program-Files/Extensions/jezblade.intelligent-extension-orchestrator-1.0.7"
+    ],
+
+    // --- Metadata y Orquestación Brotherhood ---
+    "brotherhood_metadata": {
+      "validation_mode": "auto",
+      "ci_sync": "guardian_purity_gate.yml",
+      "auto_fix": "enabled",
+      "complex_code_protection": "active",
+      "ceremonial_validation": "active",
+      "last_purified_by": "Gemini_Orchestrator"
+    },
+
+    // --- Extension Orchestrator ---
+    "extensionOrchestrator.autoSwitching": true,
+    "extensionOrchestrator.defaultProfile": "ai-development",
+    "extensionOrchestrator.performanceMode": false,
+    "extensionOrchestrator.autoDetectProfiles": true,
+    "extensionOrchestrator.detectionRules": {
+      "ai-development": ["copilot", "openai", "anthropic"],
+      "frontend-development": ["react", "vue", "tailwind"],
+      "backend-development": ["fastapi", "express", "api"],
+      "documentation": ["markdown", "docs", "readme"]
+    },
+    "extensionOrchestrator.customProfiles": {
+      "ai-development": {
+        "name": "Desarrollo Asistido por IA",
+        "description": "Activado para programacion con asistencia IA",
+        "essential": [
+          "GitHub.copilot",
+          "GitHub.copilot-chat",
+          "GoogleCloudPlatform.gemini",
+          "ms-vscode.vscode-typescript-next"
+        ],
+        "disabled": [
+          "ms-vscode.PowerShell",
+          "ms-dotnettools.csharp"
+        ]
+      },
+      "frontend-development": {
+        "name": "Desarrollo Frontend",
+        "description": "Optimizado para React, Vue, Angular, etc.",
+        "essential": [
+          "GitHub.copilot",
+          "bradlc.vscode-tailwindcss",
+          "esbenp.prettier-vscode"
+        ],
+        "disabled": [
+          "ms-python.python",
+          "ms-vscode.PowerShell"
+        ]
+      },
+      "backend-development": {
+        "name": "Desarrollo Backend",
+        "description": "Node.js, Python, APIs, databases",
+        "essential": [
+          "GitHub.copilot",
+          "ms-python.python",
+          "ms-vscode.vscode-typescript-next"
+        ],
+        "disabled": [
+          "bradlc.vscode-tailwindcss",
+          "formulahendry.auto-rename-tag"
+        ]
+      },
+      "documentation": {
+        "name": "Documentacion y Escritura",
+        "description": "Markdown, documentacion tecnica",
+        "essential": [
+          "GitHub.copilot",
+          "yzhang.markdown-all-in-one"
+        ],
+        "disabled": [
+          "ms-python.python",
+          "bradlc.vscode-tailwindcss"
+        ]
+      },
+      "data-sync": {
+        "name": "Persistencia y Sincronización",
+        "description": "MongoDB, PostgreSQL, Redis, Firebase, S3.",
+        "essential": [
+          "ms-ossdata.vscode-postgresql",
+          "mongodb.mongodb-vscode",
+          "cschleiden.vscode-firebasetools",
+          "servicenow.servicenow-vscode",
+          "amazonwebservices.aws-toolkit-vscode",
+          "meganrogge.azure-storage",
+          "christian-kohler.path-intellisense"
+        ],
+        "disabled": []
+      },
+      "productivity": {
+        "name": "Tareas Ritualizadas: Notion, Tana, Todoist",
+        "description": "Gestión de conocimiento multi-agente.",
+        "essential": ["trond.vscode-notion", "tana.vscode-tana", "todoist.todoist-vscode"],
+        "disabled": []
+      },
+      "backup-sync": {
+        "name": "Backup y Sincronización Ritual",
+        "description": "Gestión de backups, sincronización cross-repo y validación de integridad.",
+        "essential": ["eamodio.gitlens", "mhutchie.git-graph", "christian-kohler.path-intellisense"],
+        "disabled": []
+      },
+      "ritual-validation": {
+        "name": "Validación Ritual",
+        "description": "Herramientas para validar la estructura, coherencia y pureza del código y la documentación.",
+        "essential": [
+          "davidanson.vscode-markdownlint",
+          "yzhang.markdown-all-in-one",
+          "charliermarsh.ruff",
+          "editorconfig.editorconfig"
+        ],
+        "disabled": []
+      },
+      "ritual-editing": {
+        "name": "Edición Ritual",
+        "description": "Optimizado para la escritura y revisión de archivos de memoria y rituales (JSON, JSONL, Markdown).",
+        "essential": [
+          "esbenp.prettier-vscode",
+          "yzhang.markdown-all-in-one",
+          "vscode-json-viewer.json-viewer",
+          "aaron-bond.better-comments"
+        ],
+        "disabled": []
+      },
+      "multi-agent-integration": {
+        "name": "Integración Multi-Agente",
+        "description": "Configuración para el desarrollo y orquestación de agentes IA.",
+        "essential": [
+          "GitHub.copilot",
+          "GitHub.copilot-chat",
+          "googlecloudtools.cloudcode",
+          "ms-python.python",
+          "ms-python.vscode-pylance",
+          "ms-python.debugpy"
+        ],
+        "disabled": []
+      }
+    },
+
+    // --- Gemini y Copilot (sin rutas portable innecesarias) ---
+    "gemini.enableCodeCompletion": true,
+    "gemini.enableChat": true,
+    "gemini.enableInlineCompletion": true,
+    "gemini.model": "gemini-pro",
+    "gemini.temperature": 0.7,
+    "gemini.maxTokens": 2048,
+    "gemini.workspaceContext": true,
+    "extensions.autoUpdate": false,
+    "extensions.autoCheckUpdates": false,
+    "chat.agent.maxRequests": 85,
+    "chat.customAgentInSubagent.enabled": true,
+    "chat.editing.autoAcceptDelay": 20,
+    "chat.extensionUnification.enabled": true,
+    "chat.fontSize": 17,
+    "chat.instructionsFilesLocations": {
+      "Aeternum-Memory\\.github\\copilot-instructions.md": true,
+      ".github\\copilot-instructions.md": true,
+      "docs\\GEMINI.md": true
+    },
+    "chat.mcp.discovery.enabled": {
+      "claude-desktop": true,
+      "windsurf": true
+    },
+    "chat.promptFilesLocations": {
+      "prompts": true
+    },
+
+    // --- Orquestación adicional ---
+    "powershell.cwd": "Ultimate Plan - Raiz Sagrada",
+    "editor.codeActions.triggerOnFocusChange": true
+    // NOTA: Si usas tareas específicas configura un tasks.json en .vscode/
+  },
+
+  // --- Integración Brotherhood / Nexus (config canónica, no contiene secretos) ---
+  "assassins.registryUrl": "http://localhost:3000/api",
+  "assassins.hmacEnvVar": "BROTHERHOOD_HMAC_SECRET",
+  "assassins.envFile": "D:/Ultimate-Plan/Program-Files/.env",
+  "assassins.vsixDir": "D:/Ultimate-Plan/Assassins-VSIX",
+  "assassins.autoSyncBitwarden": false,
+  "nexus.serverPath": "D:/Ultimate-Plan/server",
+  "nexus.port": 3000,
+  "nexus.monitor.refreshInterval": 10000,
+  "nexus.adminPath": "http://localhost:3000/admin",
+
+  // --- Recomendaciones de extensiones (mantenidas a nivel .vscode/extensions.json o user-data/User/extensions.json) ---
+  "extensions": {
+    "recommendations": [
+      "GitHub.copilot",
+      "GitHub.copilot-chat",
+      "eamodio.gitlens",
+      "mhutchie.git-graph",
+      "christian-kohler.path-intellisense",
+      "usernamehw.errorlens",
+      "aaron-bond.better-comments",
+      "oderwat.indent-rainbow",
+      "pkief.material-icon-theme",
+      "ms-python.python",
+      "ms-python.vscode-pylance",
+      "ms-python.debugpy",
+      "ms-python.vscode-python-envs",
+      "ms-toolsai.jupyter",
+      "editorconfig.editorconfig",
+      "esbenp.prettier-vscode",
+      "streetsidesoftware.code-spell-checker",
+      "davidanson.vscode-markdownlint",
+      "yzhang.markdown-all-in-one",
+      "bradlc.vscode-tailwindcss",
+      "formulahendry.auto-rename-tag",
+      "ms-azuretools.vscode-docker",
+      "ms-vscode-remote.remote-containers",
+      "ms-vscode-remote.remote-ssh",
+      "ms-vscode-remote.remote-wsl",
+      "redhat.vscode-yaml",
+      "tamasfe.even-better-toml",
+      "shardulm94.trailing-spaces",
+      "vscode-json-viewer.json-viewer",
+      "gruntfuggly.todo-tree",
+      "ms-vscode.powershell",
+      "googlecloudtools.cloudcode",
+      "ms-ossdata.vscode-postgresql",
+      "mongodb.mongodb-vscode",
+      "servicenow.servicenow-vscode",
+      "amazonwebservices.aws-toolkit-vscode",
+      "cschleiden.vscode-firebasetools",
+      "meganrogge.azure-storage",
+      "trond.vscode-notion",
+      "tana.vscode-tana",
+      "todoist.todoist-vscode",
+      "vite.vscode-vite"
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "eslint.run": "onSave",
+  "eslint.alwaysShowStatus": false,
+  "files.exclude": {
+    "**/__SYNTHESIS__/**": true,
+    "**/Program-Files/**": true
+  },
+  "search.exclude": {
+    "**/__SYNTHESIS__/**": true,
+    "**/Program-Files/**": true
+  },
+  "files.watcherExclude": {
+    "**/__SYNTHESIS__/**": true,
+    "**/Program-Files/**": true
+  },
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  "eslint.enable": true,
+  "prettier.requireConfig": true,
+  "python.pythonPath": "D:/Ultimate-Plan/Program-Files/Python311/python.exe",
+  "terminal.integrated.shell.windows": "D:/Ultimate-Plan/Program-Files/PowerShell/7/pwsh.exe"
+}

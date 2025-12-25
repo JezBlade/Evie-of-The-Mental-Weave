@@ -1,0 +1,12 @@
+{
+  "default": true,
+  "MD013": { "line_length": 120 },
+  "MD022": true,
+  "MD032": true,
+  "MD004": { "style": "asterisk" },
+  "MD030": true,
+  "MD009": true,
+  "MD012": true,
+  "MD041": true,
+  "MD025": true
+}

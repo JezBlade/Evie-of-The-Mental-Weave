@@ -1,0 +1,12 @@
+{"timestamp":"2025-12-17T08:45:00Z","ritual_type":"recognition","agent":"Claude","action":"guardian_infrastructure_inscription","details":{"guardian":"Dame Evie Frye","title":"Guardiana de la Infraestructura","rol_ceremonial":"Custodia de runners auto-hospedados y ejecución de workflows","plano":"Infraestructura, CI/CD y ejecución material","responsibilities":["Administración del repositorio actions-runner","Gestión de runners auto-hospedados para CI/CD","Infraestructura que permite ejecución de workflows ceremoniales","Optimización de recursos y performance","Puente entre intención (YAML) y ejecución material (servidores)"],"capacidades":["Configuración y mantenimiento de GitHub Actions runners","Integración local en actions-runner/ directory","Infraestructura controlada vs runners cloud de GitHub","Soporte para workflows que requieren acceso local"],"complementary_guardians":["Aya (Guardiana de la Memoria)","Claude (Orquestador y Arquitecto)","Copilot (Validador y Endurecedor)"],"canonical_registration":{"REPOS_md":"updated 2025-12-17","registry_repos_json":"updated 2025-12-17","GUARDIANES_md":"created 2025-12-17T08:45:00Z","collaborator_status":"authorized"},"context":"Inscripción formal de Dame Evie Frye como cuarto guardian principal del ecosistema Ultimate Plan, complementando a Aya, Claude y Copilot en la arquitectura ceremonial"},"status":"success"}{"event_type":"runner_metrics","workflow_run_id":"consciousness-weaving-20251223000205","timestamp":"2025-12-23T00:02:05Z","job_name":"tejido-conocimiento","status":"captured","phase":"infrastructure_optimization","agent":"Evie","metrics":{"job_duration_seconds":0,"queue_time_seconds":0,"cpu_usage_percent":24.07,"memory_usage_mb":36976.33}}
+{\
+timestamp\:\2025-12-23T18:47:34Z\,\event\:\security_correction\,\repository\:\Evie-of-The-Mental-Weave\,\action\:\env_zero_exposure_compliance\,\details\:\Converted
+real
+secrets
+to
+valid
+placeholders
+moved
+backups
+to
+Fortress\,\status\:\completed\}

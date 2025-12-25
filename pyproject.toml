@@ -1,0 +1,7 @@
+[tool.ruff]
+# Exclude synthesized extraction and embedded Program-Files trees that contain
+# non-standard files which break TOML/TOML-aware tools during workspace scanning.
+exclude = [
+  "__SYNTHESIS__/**",
+  "**/Program-Files/**"
+]

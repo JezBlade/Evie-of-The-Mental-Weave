@@ -1,0 +1,9 @@
+
+repos:
+  - repo: https://github.com/alguna/repo-de-hooks
+    rev: vX.Y.Z
+    hooks:
+      - id: el-hook-que-esta-fallando
+        name: Tu Hook (corregido para Windows/sh)
+        entry: D:/Ultimate-Plan/Program-Files/Git/bin/sh.exe
+        language: system

@@ -1,0 +1,36 @@
+#!/bin/bash
+# Hermandad del Sello Brotherhood - Pre-commit Ritual
+# Solo valida archivos compatibles (.py, .md) para el sello Brotherhood
+# No bloquea commits por archivos incompatibles ni realiza ediciones masivas
+
+SEAL="015cb320"
+VALIDATOR="tools/validate_purity.py"
+
+# Detectar archivos staged compatibles
+FILES=$(git diff --cached --name-only --diff-filter=ACM | grep -E '\\.(py|md)$')
+
+if [ -z "$FILES" ]; then
+	echo "[Brotherhood] No hay archivos .py o .md para validar el sello. Ritual completado."
+	# Ejecutar lint-staged si existe configuración
+	if [ -f "package.json" ] && grep -q 'lint-staged' package.json; then
+		npx lint-staged
+	fi
+	exit 0
+fi
+
+# Ejecutar validador solo en archivos compatibles
+python3 "$VALIDATOR" $FILES
+RESULT=$?
+
+if [ $RESULT -ne 0 ]; then
+	echo "\n[Brotherhood] Sello ceremonial faltante o inválido en archivos compatibles. Corrige antes de commitear."
+	exit 1
+fi
+
+# Ejecutar lint-staged si existe configuración
+if [ -f "package.json" ] && grep -q 'lint-staged' package.json; then
+	npx lint-staged
+fi
+
+echo "[Brotherhood] Sello validado en todos los archivos compatibles. Puedes commitear."
+exit 0
