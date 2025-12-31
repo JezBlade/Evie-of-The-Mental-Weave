@@ -85,9 +85,6 @@ $logEntry = @"
 - * * Ritual:** weave-consciousness-into-tana.ps1
 - * * Reporte de Origen:** $($latestReport.Name)
 - * * Resultado:** Nodo de conocimiento generado en `$($outputFile.Replace($evieWorkspace, '...'))`
-  - **Ritual:** weave-consciousness-into-tana.ps1
-- * * Reporte de Origen:** $($latestReport.Name)
-- * * Resultado:** Nodo de conocimiento generado en `$($outputFile.Replace($evieWorkspace, '...'))`
   - **Contexto Sistémico:**
 - Health Score: $systemHealthScore
 - Coherencia Fractal: $divergentRepos repos divergentes
