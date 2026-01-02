@@ -1,0 +1,82 @@
+# .github/dependabot.yml
+# 🤖 Configuración Canónica para Dependabot - Consejo de Automatización
+
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
+    commit-message:
+      prefix: "fix(deps): "
+    labels:
+      - "dependencies"
+    ignore:
+      - dependency-name: "eslint"
+        versions: ["8.x"]
+    reviewers:
+      - "JezBlade"
+
+  - package-ecosystem: "npm"
+    directory: "/frontend"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
+    commit-message:
+      prefix: "fix(deps): "
+    labels:
+      - "dependencies"
+    reviewers:
+      - "JezBlade"
+
+  - package-ecosystem: "pip"
+    directory: "/Program-Files/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
+    commit-message:
+      prefix: "fix(deps): "
+    labels:
+      - "dependencies"
+    reviewers:
+      - "JezBlade"
+
+  # === Ecosistema Docker (Infraestructura) ===
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    reviewers:
+      - "JezBlade"
+    labels:
+      - "dependencies"
+      - "docker"
+      - "🛡️ infrastructure"
+    commit-message:
+      prefix: "chore(infra)"
+    groups:
+      docker-dependencies:
+        patterns:
+          - "*"
+
+  # === GitHub Actions ===
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    reviewers:
+      - "JezBlade"
+    labels:
+      - "dependencies"
+      - "github-actions"
+      - "infrastructure"
+    commit-message:
+      prefix: "chore(deps-actions)"
+    groups:
+      actions-dependencies:
+        patterns:
+          - "*"
+    open-pull-requests-limit: 5
