@@ -17,6 +17,7 @@ updates:
         versions: ["8.x"]
     reviewers:
       - "JezBlade"
+      - "DameEvieFrye"
 
   - package-ecosystem: "npm"
     directory: "/frontend"
@@ -29,6 +30,7 @@ updates:
       - "dependencies"
     reviewers:
       - "JezBlade"
+      - "DameEvieFrye"
 
   - package-ecosystem: "pip"
     directory: "/Program-Files/"
@@ -41,6 +43,7 @@ updates:
       - "dependencies"
     reviewers:
       - "JezBlade"
+      - "DameEvieFrye"
 
   # === Ecosistema Docker (Infraestructura) ===
   - package-ecosystem: "docker"
@@ -50,6 +53,7 @@ updates:
       day: "monday"
     reviewers:
       - "JezBlade"
+      - "DameEvieFrye"
     labels:
       - "dependencies"
       - "docker"
@@ -69,6 +73,7 @@ updates:
       day: "monday"
     reviewers:
       - "JezBlade"
+      - "DameEvieFrye"
     labels:
       - "dependencies"
       - "github-actions"
